@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>ReFa VEENA | RuCOR. / umily by RuCOR.</title>
+<meta name="description" content="ReFaのウルトラファインバブル「VEENA」導入で、髪も頭皮も仕上がりがワンランク上に。RuCOR./umily by RuCOR.のVEENA体験ページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #f3f2f2;
+    --color-text: #201f1d;
+    --color-accent: #b68235;
+    --color-accent-100: #fff3e4;
+    --color-accent-700: #7d5411;
+    --color-accent-900: #3a270d;
+    --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--color-bg); }
+  body {
+    margin: 0; background: var(--color-bg); color: var(--color-text);
+    font-family: 'Lora', serif; font-size: 15px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; margin: 0; }
+  p { margin: 0; }
+  a { color: var(--color-accent); text-underline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+  figure { margin: 0; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); }
+  .rule { height: 1px; border: 0; margin: 0; background: var(--color-divider); }
+
+  .plate { filter: sepia(0.22) saturate(0.82) contrast(1.05); box-sizing: border-box; border: 6px solid #eae9e9; outline: 1px solid var(--color-divider); }
+  .plate img { width: 100%; display: block; object-fit: cover; }
+
+  .card { border: 1px solid var(--color-divider); border-radius: 4px; box-shadow: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent); }
+  .tag {
+    display: inline-flex; align-items: center; font-size: 11px;
+    letter-spacing: 0.02em; padding: 3px 10px; border-radius: 3px;
+    background: var(--color-accent-100); color: var(--color-accent-700);
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    cursor: pointer; text-decoration: none;
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 15px; line-height: 1.2; color: var(--color-accent);
+    background: transparent; border: 1px solid var(--color-accent);
+    padding: 10px 22px; border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover { background: var(--color-accent); color: #fff; }
+
+  .nav {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 20px 0; flex-wrap: wrap;
+  }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; }
+  .nav-links { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .nav-links a { color: inherit; text-decoration: none; font-size: 14px; }
+  .nav-links a[aria-current='location'] { color: var(--color-accent-700); }
+
+  .kicker { display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 14px; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature-card { padding: 24px; display: flex; flex-direction: column; }
+  .feature-card .icon { width: 26px; height: 26px; color: var(--color-accent); margin-bottom: 16px; }
+  .feature-card .icon svg { width: 100%; height: 100%; }
+  .feature-card .title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 19px; line-height: 1.5; margin: 0 0 4px; }
+  .feature-card .desc { font-size: 14px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 12px 0 0; }
+
+  .cta-strip { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 32px; align-items: center; }
+  .split-row { display: grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap: clamp(24px,5vw,64px); align-items: center; }
+  @media (max-width: 860px) {
+    .cta-strip, .split-row { grid-template-columns: 1fr; gap: 28px; }
+    .split-row .plate { order: -1; }
+  }
+  .upgrade-list { margin: 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .upgrade-list li { font-size: 15.5px; line-height: 1.6; }
+
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .voice-who { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .voice-avatar {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--color-accent-100);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-accent-700);
+  }
+  .voice-avatar svg { width: 22px; height: 22px; }
+  .voice-name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 17px; margin: 0; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--color-divider); border: 1px solid var(--color-divider); border-radius: 4px; overflow: hidden; }
+  .faq-list details { background: var(--color-bg); padding: 20px 24px; }
+  .faq-list summary { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 17px; list-style: none; cursor: pointer; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list p { font-size: 15px; line-height: 1.8; margin: 14px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="nav">
+    <span class="nav-brand">RuCOR. / umily</span>
+    <div class="nav-links">
+      <a href="index.html">TOP</a>
+      <a href="kamishitsu-kaizen.html">髪質改善</a>
+      <a href="head-spa.html">Head spa</a>
+      <a href="home-care.html">Home care</a>
+      <a href="10-kodawari.html">10のこだわり</a>
+      <a href="veena.html" aria-current="location">VEENA</a>
+    </div>
+  </nav>
+</div>
+
+<hr class="rule">
+
+<!-- HERO -->
+<div class="wrap">
+  <section style="padding: 56px 0 40px;">
+    <span class="kicker">ReFa ULTRA FINE BUBBLE VEENA</span>
+    <h1 style="font-weight: 400; font-size: clamp(34px,5.5vw,58px); line-height: 1.5; letter-spacing: 0.04em; margin: 0 0 20px;">ただのシャワーで、<br>こんなに違うの？</h1>
+    <p style="font-size: 16px; line-height: 1.8; max-width: 56ch; margin: 0 0 32px; color: color-mix(in srgb, var(--color-text) 78%, transparent);">"特別なことを、当たり前に。"ReFaのウルトラファインバブル「VEENA」導入で、髪も頭皮も仕上がりがワンランク上に。</p>
+    <figure class="plate">
+      <img src="images/veena-hero-photo.webp" alt="ヘッドスパ / シャワーの写真" style="aspect-ratio:16/9; object-fit:cover;" width="750" height="750">
+    </figure>
+  </section>
+</div>
+
+<hr class="rule">
+
+<!-- FEATURES -->
+<div class="wrap">
+  <section style="padding: 52px 0 40px;">
+    <span class="kicker">Feature</span>
+    <h2 style="font-weight: 400; font-size: clamp(26px,3vw,34px); margin: 0 0 32px;">VEENAを使うとどうなるの？</h2>
+    <div class="feature-grid">
+      <div class="card feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 5-9 13L3 8z"/><path d="M3 8h18M9 3l3 5-3 8M15 3l-3 5 3 8"/></svg></div>
+        <p class="title">✔ 髪がつるん。<br>乾かしただけでまとまる</p>
+        <p class="desc">▶ 髪の中に水分が長く留まり、自然なツヤと指通りに</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <p class="title">✔ 頭皮スッキリ。<br>ベタつきやニオイもリセット</p>
+        <p class="desc">▶ 目に見えない毛穴汚れもウルトラファインバブルで浮かせて落とす</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.5 15.5M20 20L14 14M8.5 8.5L11 11"/></svg></div>
+        <p class="title">✔ トリートメントの<br>"入り"が変わる</p>
+        <p class="desc">▶ 髪と頭皮をゼロベースに整えるから、その後の施術効果が底上げされる</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" style="padding: 12px 0 48px;">
+    <div>
+      <span class="kicker">Trial</span>
+      <h3 style="font-weight: 400; font-size: 24px; margin: 0 0 12px;">まずは一度、体感してください</h3>
+      <p style="font-size: 15px; line-height: 1.8; max-width: 48ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0 0 20px;">VEENAは全メニューに標準搭載。カウンセリング時にお気軽にお尋ねください。</p>
+      <a class="btn" href="https://beauty.hotpepper.jp/slnH000452481/" target="_blank" rel="noopener">体験を予約する</a>
+    </div>
+    <figure class="plate">
+      <img src="images/veena-cta-photo.webp" alt="サロン内観の写真" style="aspect-ratio:4/3; object-fit:cover;" width="572" height="572">
+    </figure>
+  </section>
+</div>
+
+<hr class="rule">
+
+<!-- MENU UPGRADE SPLIT -->
+<div class="wrap">
+  <section class="split-row" style="padding: 52px 0 40px;">
+    <figure class="plate">
+      <img src="images/veena-menu-photo.webp" alt="施術風景の写真" style="aspect-ratio:3/4; object-fit:cover;" width="564" height="272">
+    </figure>
+    <div>
+      <span class="kicker">Upgrade</span>
+      <h2 style="font-weight: 400; font-size: clamp(24px,3vw,32px); margin: 0 0 20px; line-height: 1.4;">「いつものメニュー」が、<br>ワンランク上に</h2>
+      <p style="font-size: 15.5px; line-height: 1.9; max-width: 44ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0 0 4px;">VEENAは「オプション」ではなく、お客様全員に行う、施術の土台を整えるステップです。だから、</p>
+      <ul class="upgrade-list">
+        <li>・カラーの発色がキレイに出る</li>
+        <li>・縮毛矯正後のツヤが増す</li>
+        <li>・トリートメントが浸透しやすい</li>
+      </ul>
+      <p style="font-family:'Cormorant Garamond',serif; font-size: 19px; font-style: italic; margin: 16px 0 0; color: var(--color-accent-900);">"何かが違う"じゃなくて、"明らかに変わる"感覚。</p>
+    </div>
+  </section>
+</div>
+
+<hr class="rule">
+
+<!-- TESTIMONIALS -->
+<div class="wrap">
+  <section style="padding: 52px 0 40px;">
+    <span class="kicker">Voice</span>
+    <h2 style="font-weight: 400; font-size: clamp(26px,3vw,34px); margin: 0 0 32px;">体感した人のリアルな声</h2>
+    <div class="voice-grid">
+      <div class="card" style="padding: 28px;">
+        <div class="voice-who">
+          <div class="voice-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div>
+            <p class="voice-name">20代 会社員 / 女性</p>
+            <span class="tag" style="margin-top:4px; display:inline-block;">VOICE</span>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.85; color: color-mix(in srgb, var(--color-text) 82%, transparent);">「マッサージモードのドドドってシャワーだけで、こんなに気持ちいいなんて！落とした汚れを見せてもらったけど、びっくりするくらい汚れが浮いていました！笑 クレンジングされてるおかげかいつもよりトリートメントが長持ちしています！」</p>
+      </div>
+      <div class="card" style="padding: 28px;">
+        <div class="voice-who">
+          <div class="voice-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div>
+            <p class="voice-name">30代 主婦 / 女性</p>
+            <span class="tag" style="margin-top:4px; display:inline-block;">VOICE</span>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.85; color: color-mix(in srgb, var(--color-text) 82%, transparent);">「時間の都合上いつものトリートメントができなかったのに、シャワーを使ってもらったからか髪がすごくやわらかくなりました！最後の仕上げのリラックスモードは水がやわらかく当たって癒されました！乾かした後も頭が保湿されてる感じがします！」</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<hr class="rule">
+
+<!-- FAQ -->
+<div class="wrap">
+  <section style="padding: 52px 0 40px;">
+    <span class="kicker">FAQ</span>
+    <h2 style="font-weight: 400; font-size: clamp(26px,3vw,34px); margin: 0 0 28px;">よくある質問</h2>
+    <div class="faq-list">
+      <details open>
+        <summary>Q. トリートメントなしでも違いがありますか？</summary>
+        <p>A. はい、VEENAは"素髪"そのものの状態を整えるので、トリートメントなしでも仕上がりに差が出ます。</p>
+      </details>
+      <details open>
+        <summary>Q. 特にどの施術と相性がいいですか？</summary>
+        <p>A. 縮毛矯正・カラー・スパなど、すべての施術に最適です。</p>
+      </details>
+      <details open>
+        <summary>Q. 通常より時間がかかるんですか？</summary>
+        <p>A. いいえ。いつものシャンプーと同じ流れで施術可能です。</p>
+      </details>
+      <details open>
+        <summary>Q. 予約はどこからできますか？</summary>
+        <p>A. 公式サイトのご予約フォーム、またはお電話にて承っております。</p>
+      </details>
+    </div>
+  </section>
+</div>
+
+<hr class="rule">
+
+<!-- CLOSE -->
+<div class="wrap">
+  <section style="padding: 52px 0 40px;">
+    <span class="kicker">Message</span>
+    <h2 style="font-weight: 400; font-size: clamp(24px,3vw,32px); margin: 0 0 20px;">あなたの髪に、違いを感じてほしいから。</h2>
+    <p style="font-size: 15.5px; line-height: 1.9; max-width: 56ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0 0 4px;">RuCOR./umily by RuCOR.では"特別なことを、当たり前に"お客様皆様に提供させて頂きます。</p>
+    <p style="font-size: 15.5px; line-height: 1.9; max-width: 56ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0 0 28px;">VEENAは、そのはじまりになる存在です。まずは体験してみてください。それだけで、髪も気分も変わりはじめます。</p>
+    <a class="btn" href="https://beauty.hotpepper.jp/slnH000452481/" target="_blank" rel="noopener">体験を予約する</a>
+  </section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+  <footer style="padding: 28px 0; font-size: 13px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">RuCOR. / umily by RuCOR.</footer>
+</div>
+
+</body>
+</html>

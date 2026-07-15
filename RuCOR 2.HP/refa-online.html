@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>ReFa Online | RuCOR. Group</title>
+<meta name="description" content="RefaやSIXPADで人気のMTG公式オンラインサイト“Bhappy”。RuCOR. Groupのお客様限定で5,000円分のクーポンをプレゼント。LINE連携で登録は無料、1分で完了します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F2EC;
+    --ink:#1D1B17;
+    --ink-soft:#6B655A;
+    --ink-faint:#9B9385;
+    --line:#D9D2C2;
+    --accent:#B07C48;
+    --accent-soft:#EEE1CD;
+    --rucor-soft:#DDE3DE;
+    --hito-soft:#E4DCE9;
+    --qr-soft:#EAE7DD;
+    --step-box:#F0EDE5;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{background:var(--paper);}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--accent); }
+  a:hover{ color:var(--ink); }
+  .serif{font-family:'Shippori Mincho', serif;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  /* ===== HEADER ===== */
+  .site-header{ padding:24px 28px 0; }
+  .back-link{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.1em;
+    color:var(--ink-soft); text-decoration:none;
+  }
+  .back-link:hover{ color:var(--ink); }
+
+  /* ===== HERO ===== */
+  .hero-photo{
+    width:100%; aspect-ratio:16/7; overflow:hidden; background:var(--accent-soft);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero{ max-width:760px; margin:0 auto; padding:40px 28px 0; text-align:center; }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.18em;
+    color:var(--accent); text-transform:uppercase;
+    opacity:0; transform:translateY(10px);
+    animation:introUp 0.9s ease forwards;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho', serif; font-weight:600;
+    font-size:clamp(26px, 4.6vw, 40px); line-height:1.4;
+    margin:18px 0 16px;
+    opacity:0; transform:translateY(10px);
+    animation:introUp 1s ease forwards; animation-delay:0.15s;
+  }
+  .hero h1 .highlight{ color:var(--accent); }
+  .hero p.lead{
+    font-size:14.5px; color:var(--ink-soft);
+    margin:0 auto 28px; max-width:480px;
+    opacity:0; transform:translateY(10px);
+    animation:introUp 1s ease forwards; animation-delay:0.3s;
+  }
+  .hero-cta{
+    opacity:0; transform:translateY(10px);
+    animation:introUp 1s ease forwards; animation-delay:0.45s;
+  }
+  @keyframes introUp{ to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){
+    .hero .eyebrow, .hero h1, .hero p.lead, .hero-cta{ animation:none; opacity:1; transform:none; }
+  }
+
+  /* ===== BUTTON ===== */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:14.5px; font-weight:500;
+    padding:15px 34px;
+    border-radius:2px;
+    text-decoration:none;
+    color:var(--paper);
+    background:var(--accent);
+    transition:opacity 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{ opacity:0.85; transform:translateX(2px); color:var(--paper); }
+  .btn-large{ padding:16px 40px; }
+  .btn-outline{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13.5px; font-weight:500;
+    padding:12px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    color:var(--ink);
+    border:1px solid var(--ink);
+    background:transparent;
+    transition:opacity 0.2s ease, transform 0.2s ease;
+  }
+  .btn-outline:hover{ opacity:0.65; transform:translateX(2px); color:var(--ink); }
+
+  /* ===== BENEFITS BAR ===== */
+  .benefits-bar{
+    margin-top:44px; padding:22px 28px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .benefits-grid{
+    max-width:1040px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .benefit{ text-align:center; padding:14px 12px; border-right:1px solid var(--line); }
+  .benefit:last-child{ border-right:none; }
+  .benefit b{
+    display:block;
+    font-family:'Shippori Mincho', serif; font-weight:500; font-size:17px; color:var(--accent);
+  }
+  .benefit span{ font-size:12.5px; color:var(--ink-soft); display:block; margin-top:4px; }
+
+  /* ===== SECTION ===== */
+  .section-block{ padding:48px 0; }
+  .section-block.dashed{ border-top:1px dashed var(--line); }
+  .kicker{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em;
+    color:var(--accent); text-transform:uppercase; margin-bottom:20px;
+  }
+
+  /* ===== LINEUP ===== */
+  .lineup-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px;
+  }
+  .lineup-photo{
+    aspect-ratio:1/1; border-radius:2px; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lineup-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ===== REGISTRATION ===== */
+  .reg-head{ text-align:center; max-width:560px; margin:0 auto 36px; }
+  .badge{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.14em;
+    color:var(--accent); text-transform:uppercase;
+    border:1px solid var(--line); border-radius:2px; padding:8px 18px;
+  }
+  .reg-head h2{
+    font-family:'Shippori Mincho', serif; font-weight:600;
+    font-size:clamp(24px, 4.4vw, 32px); line-height:1.5; margin:22px 0 16px;
+  }
+  .reg-head p{ font-size:13.5px; color:var(--ink-soft); margin:0 0 6px; }
+  .reg-head p.note{ font-size:13px; color:var(--ink-faint); }
+  .reg-body{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:40px; align-items:center;
+  }
+  .qr-photo{
+    width:200px; aspect-ratio:1/1; border-radius:2px; overflow:hidden;
+    background:var(--qr-soft); margin:0 auto;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .qr-photo img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .reg-copy p{ font-size:15px; color:var(--ink); margin:0 0 14px; }
+  .reg-copy p:last-child{ font-size:14px; color:var(--ink-soft); margin:0; }
+  .reg-cta{ text-align:center; margin-top:36px; }
+  .perk-list{
+    margin-top:22px; font-size:12.5px; color:var(--ink-soft); line-height:2;
+    list-style:none;
+  }
+  .perk-list li::before{ content:'✦ '; }
+
+  /* ===== LINE STEPS ===== */
+  .steps h3{
+    font-family:'Shippori Mincho', serif; font-weight:600; font-size:20px; margin:0 0 8px;
+  }
+  .steps > p{ font-size:13.5px; color:var(--ink-soft); margin:0 0 32px; }
+  .step-grid{
+    display:grid; grid-template-columns:40px 1fr; gap:14px 20px; max-width:640px;
+  }
+  .step-num{
+    border:1px solid var(--line); border-radius:2px; width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Shippori Mincho', serif; font-size:14px; color:var(--accent);
+  }
+  .step-title{ font-size:14px; font-weight:700; margin:0 0 4px; }
+  .step-body p{ font-size:13px; color:var(--ink-soft); margin:0; }
+  .step-body p + p{ margin-top:0; }
+  .step-body .copy-box{
+    background:var(--step-box); border:1px solid var(--line); border-radius:4px;
+    padding:18px; text-align:center; max-width:280px; margin:12px 0 0;
+    cursor:pointer; transition:opacity 0.2s ease;
+  }
+  .step-body .copy-box:hover{ opacity:0.8; }
+  .copy-box .number{
+    font-family:'Shippori Mincho', serif; font-size:20px; letter-spacing:0.08em; color:var(--ink);
+  }
+  .copy-box .hint{ font-size:11px; color:var(--ink-faint); margin-top:6px; }
+  .step-body .footnote{ font-size:12px; color:var(--ink-faint); margin:8px 0 0; }
+  .steps-cta{ margin-top:32px; }
+
+  /* ===== FOOTER ===== */
+  footer{ padding:48px 0 80px; border-top:1px solid var(--line); text-align:center; }
+  footer .brand{ font-family:'Shippori Mincho', serif; font-size:16px; margin-bottom:8px; }
+  footer a{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-soft); text-decoration:none;
+  }
+  footer a:hover{ color:var(--ink); }
+
+  /* ===== REVEAL ===== */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none; opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="index.html">← RuCOR. Group TOP</a>
+</header>
+
+<section class="hero-photo">
+  <img src="images/refa-hero-photo.webp" alt="ReFa × MISAMO" width="640" height="360">
+</section>
+
+<section class="hero">
+  <div class="eyebrow">ReFa Online ｜ Bhappy</div>
+  <h1>登録者数50万人突破。ReFa公式サイトで<br><span class="highlight">5,000円分</span>のクーポンを。</h1>
+  <p class="lead">RefaやSIXPADで人気のMTG公式オンラインサイト“Bhappy”。サロン限定の先行アイテムや期間限定キャンペーンにいち早くアクセスできます。</p>
+  <div class="hero-cta">
+    <a class="btn" href="https://www.bhappy-platform.jp/shop/customer/entry.aspx?store_rgkey=6f1032ef-fd0c-47f7-983d-13cf9f66610d" target="_blank" rel="noopener">Bhappyに無料登録する →</a>
+  </div>
+</section>
+
+<section class="benefits-bar reveal">
+  <div class="benefits-grid">
+    <div class="benefit"><b>¥5,000分</b><span>LINE連携でクーポン</span></div>
+    <div class="benefit"><b>5年保証</b><span>物損・水濡れも対象</span></div>
+    <div class="benefit"><b>下取</b><span>新商品がお得に</span></div>
+    <div class="benefit"><b>先行案内</b><span>新商品・限定品</span></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="section-block reveal">
+    <div class="kicker">Lineup</div>
+    <div class="lineup-grid">
+      <div class="lineup-photo"><img src="images/refa-photo-1.webp" alt="ReFa FINE BUBBLE" width="561" height="610"></div>
+      <div class="lineup-photo"><img src="images/refa-photo-2.webp" alt="ReFaヘアアイロン・ドライヤー" width="610" height="610"></div>
+      <div class="lineup-photo"><img src="images/refa-photo-3.webp" alt="ReFaブラシ" width="610" height="610"></div>
+    </div>
+  </section>
+
+  <section class="section-block dashed reveal">
+    <div class="reg-head">
+      <span class="badge">For RuCOR. Guests Only</span>
+      <h2 class="serif">登録は無料、<br>1分で完了します。</h2>
+      <p>LINE ID連携で3,000円クーポン×1枚、1,000円クーポン×2枚、合計5,000円分が発券されます。</p>
+      <p class="note">※各クーポンに最低購入金額条件あり。併用不可。</p>
+    </div>
+    <div class="reg-body">
+      <div class="qr-photo"><img src="images/refa-qr.webp" alt="Bhappy登録QRコード" width="300" height="300"></div>
+      <div class="reg-copy">
+        <p>登録ボタンもしくはQRコードから登録できます！</p>
+        <p>さらにLINE登録限定で"総額5000円"クーポン、お誕生日クーポン、シークレットセールやシークレットキャンペーン等お得なお知らせが届きます！</p>
+      </div>
+    </div>
+    <div class="reg-cta">
+      <a class="btn btn-large" href="https://www.bhappy-platform.jp/shop/customer/entry.aspx?store_rgkey=6f1032ef-fd0c-47f7-983d-13cf9f66610d" target="_blank" rel="noopener">Bhappyに無料登録する →</a>
+      <ul class="perk-list">
+        <li>登録・年会費 一切無料</li>
+        <li>5年間延長保証「きちんと保証」が購入可能</li>
+        <li>旧機種の下取りサービスあり</li>
+        <li>月々定額払い対応（分割手数料MTG負担）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-block dashed steps reveal">
+    <div class="kicker">Bonus Step</div>
+    <h3 class="serif">LINE連携でさらにお得に</h3>
+    <p>Bhappy登録後、LINEと連携することでシークレットセールや限定クーポンの通知が届くようになります。</p>
+
+    <div class="step-grid">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Bhappy LINE公式アカウントを友達追加</div>
+        <p>下のボタンからBhappyのLINE公式アカウントを友達追加してください。</p>
+      </div>
+
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">「0445438555」とメッセージを送信</div>
+        <p>友達追加後、トーク画面に以下の番号を入力して送信してください。ウェルカムメッセージが届きます。</p>
+        <div class="copy-box" id="phone-copy" role="button" tabindex="0" aria-label="電話番号をコピー">
+          <div class="number mono">0445438555</div>
+          <div class="hint">タップでコピー</div>
+        </div>
+        <p class="footnote">※ RuCOR. 専用の番号です</p>
+      </div>
+
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">新規会員登録</div>
+        <p>自動返信されたURLから「お客様情報」を入力して会員登録を完了させてください。</p>
+      </div>
+
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">クーポン発券・お買い物へ</div>
+        <p>登録完了後、LINE ID連携で5,000円分のクーポンが発券されます。次のお買い物からご利用いただけます。</p>
+      </div>
+    </div>
+
+    <div class="steps-cta">
+      <a class="btn-outline" href="https://liff.line.me/1645278921-kWRPP32q?accountId=734rgpys&openerPlatform=native&openerKey=talkroom%3Amessage" target="_blank" rel="noopener">LINE公式アカウントを友達追加 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand serif">RuCOR. Group</div>
+    <a href="index.html">← TOPへ戻る</a>
+  </footer>
+
+</div>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, {threshold:0.12});
+  items.forEach(i=>obs.observe(i));
+
+  const copyBox = document.getElementById('phone-copy');
+  if (copyBox) {
+    const hint = copyBox.querySelector('.hint');
+    const originalHint = hint.textContent;
+    const doCopy = () => {
+      const text = copyBox.querySelector('.number').textContent.trim();
+      const done = () => { hint.textContent = 'コピーしました'; setTimeout(()=>{ hint.textContent = originalHint; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(done);
+      } else {
+        done();
+      }
+    };
+    copyBox.addEventListener('click', doCopy);
+    copyBox.addEventListener('keydown', (e)=>{ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doCopy(); } });
+  }
+</script>
+</body>
+</html>
