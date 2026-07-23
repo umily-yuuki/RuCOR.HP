@@ -6,19 +6,6 @@
 <meta name="color-scheme" content="light">
 <title>ヒトトイロ | 完全個室ヘッドスパ専門店 — 登戸・向ヶ丘遊園</title>
 <meta name="description" content="登戸・向ヶ丘遊園の完全個室ヘッドスパ専門店ヒトトイロ。触覚・聴覚・視覚・嗅覚・味覚、五感で味わう休息の時間。">
-<link rel="canonical" href="https://rucorhairgroup.netlify.app/hitotoiro.html">
-<link rel="icon" type="image/png" href="/images/rucor-logo.png">
-<meta property="og:site_name" content="RuCOR. Group">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rucorhairgroup.netlify.app/hitotoiro.html">
-<meta property="og:title" content="ヒトトイロ | 完全個室ヘッドスパ専門店 — 登戸・向ヶ丘遊園">
-<meta property="og:description" content="登戸・向ヶ丘遊園の完全個室ヘッドスパ専門店ヒトトイロ。触覚・聴覚・視覚・嗅覚・味覚、五感で味わう休息の時間。">
-<meta property="og:image" content="https://rucorhairgroup.netlify.app/images/rucor-logo.png">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ヒトトイロ | 完全個室ヘッドスパ専門店 — 登戸・向ヶ丘遊園">
-<meta name="twitter:description" content="登戸・向ヶ丘遊園の完全個室ヘッドスパ専門店ヒトトイロ。触覚・聴覚・視覚・嗅覚・味覚、五感で味わう休息の時間。">
-<meta name="twitter:image" content="https://rucorhairgroup.netlify.app/images/rucor-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Old+Mincho:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -144,6 +131,15 @@
     background:linear-gradient(to top, var(--color-bg) 4%, transparent 42%, rgba(45,43,43,0.45) 100%);
   }
   .hero-fg{ position:relative; z-index:2; padding:0 clamp(20px,6vw,72px) 72px; }
+  .hero-fg::before{
+    content:''; position:absolute; z-index:-1;
+    left:-24px; right:-24px; bottom:-24px; top:-56px;
+    background:linear-gradient(to top,
+      var(--color-bg) 55%,
+      color-mix(in srgb, var(--color-bg) 75%, transparent) 78%,
+      transparent 100%);
+    pointer-events:none;
+  }
   .hero-kicker{ display:block; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:14px; }
   .hero h1{ font-size:clamp(34px,6.4vw,64px); letter-spacing:-0.01em; animation:breathe 8s ease-in-out infinite; transform-origin:left bottom; }
   .hero p{ font-size:16px; line-height:1.9; max-width:34ch; margin:24px 0 0; color:rgba(32,31,29,0.82); }
