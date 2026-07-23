@@ -201,6 +201,13 @@ textarea.input { min-height: 90px; resize: vertical; }
   display: flex; align-items: center; gap: 6px; font-size: 11px;
   color: color-mix(in srgb, var(--color-text) 50%, transparent);
 }
+.growth-steps{ display:flex; flex-wrap:wrap; align-items:stretch; justify-content:center; gap:10px; }
+.growth-arrow{ align-self:center; color:var(--color-accent-700); font-size:18px; }
+@media (max-width:640px){
+  .growth-steps{ flex-direction:column; align-items:stretch; }
+  .growth-steps .card{ min-width:0; }
+  .growth-arrow{ transform:rotate(90deg); }
+}
 .elev-sm { box-shadow: var(--shadow-sm); }
 .elev-md { box-shadow: var(--shadow-md); }
 .elev-lg { box-shadow: var(--shadow-lg); }
@@ -292,15 +299,15 @@ textarea.input { min-height: 90px; resize: vertical; }
       <span style="display:block;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent);text-align:center;margin-bottom:16px;">FOR YOU</span>
       <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(24px,3.2vw,30px);text-align:center;margin:0 0 52px;">こんな毎日になっていませんか</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:48px;margin:0 0 44px;">
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>毎月、売上に追われている</p>
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>新規のお客様が入っても、リピートしない</p>
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>単価が上がらない</p>
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>毎日、ただ忙しいだけ</p>
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>自分の武器と呼べるものがない</p>
-        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>このまま美容師を続けて将来が見えるのか、正直不安</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「今月の数字、また厳しいな」</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「新規は入るのに、<br>なぜか一回で終わる」</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「この技術で、<br>単価を上げていいのか自信がない」</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「気づけば今日も、<br>休む間もなく1日が終わった」</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「"あなたにお願いしたい"と<br>言われたことが、まだない」</p>
+        <p style="font-size:14.5px;opacity:0.92;padding:16px 0;margin:0;border-bottom:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);"><span style="color:var(--color-accent);margin-right:12px;">―</span>「10年後も、<br>この仕事を続けられているだろうか」</p>
       </div>
       <div style="max-width:620px;margin:0 auto;text-align:center;font-size:14px;opacity:0.9;line-height:1.9;">
-        <p style="margin:0;">頑張っているのに、美容師がどんどん苦しくなっていませんか。</p>
+        <p style="margin:0;">技術も経験も積んできたのに、<br>給料も自信も増えていかない。</p>
       </div>
     </div>
   </section>
@@ -308,8 +315,8 @@ textarea.input { min-height: 90px; resize: vertical; }
   <!-- ③共感 -->
   <section style="padding:clamp(56px,9vw,96px) 0;" data-screen-label="Empathy">
     <div style="max-width:640px;margin:0 auto;padding:0 clamp(20px,5vw,72px);text-align:center;">
-      <p style="font-family:var(--font-heading);font-weight:400;font-size:clamp(20px,2.8vw,26px);color:var(--color-accent-700);margin:0 0 20px;line-height:1.7;">美容師を辞めたいんじゃない。</p>
-      <p style="font-size:15px;opacity:0.85;line-height:2;margin:0;">もっと自信を持って、お客様を担当したいだけ。<br>もっと、仕事を楽しみたいだけ。</p>
+      <p style="font-family:var(--font-heading);font-weight:400;font-size:clamp(20px,2.8vw,26px);color:var(--color-accent-700);margin:0 0 20px;line-height:1.7;">辞めたいわけじゃない。</p>
+      <p style="font-size:15px;opacity:0.85;line-height:2;margin:0;">目の前のお客様に、<br>根拠を持って向き合いたい。<br>その積み重ねで、<br>仕事にもっと自信を持ちたいだけ。</p>
     </div>
   </section>
 
@@ -436,15 +443,15 @@ textarea.input { min-height: 90px; resize: vertical; }
     <div style="max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
       <span style="display:block;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);text-align:center;margin-bottom:12px;">GROWTH STORY</span>
       <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(22px,3vw,28px);text-align:center;margin:0 0 44px;">入社後、こんな変化が起こります</h2>
-      <div style="display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:10px;">
+      <div class="growth-steps">
         <div class="card" style="flex:1;min-width:140px;align-items:center;text-align:center;padding:22px 14px;"><p style="font-size:11px;color:var(--color-accent-700);letter-spacing:0.1em;margin:0 0 8px;">STEP 1</p><p style="font-size:13px;margin:0;line-height:1.7;">髪質改善を学ぶ</p></div>
-        <div style="align-self:center;color:var(--color-accent-700);font-size:18px;">→</div>
+        <div class="growth-arrow">→</div>
         <div class="card" style="flex:1;min-width:140px;align-items:center;text-align:center;padding:22px 14px;"><p style="font-size:11px;color:var(--color-accent-700);letter-spacing:0.1em;margin:0 0 8px;">STEP 2</p><p style="font-size:13px;margin:0;line-height:1.7;">自信を持って提案できる</p></div>
-        <div style="align-self:center;color:var(--color-accent-700);font-size:18px;">→</div>
+        <div class="growth-arrow">→</div>
         <div class="card" style="flex:1;min-width:140px;align-items:center;text-align:center;padding:22px 14px;"><p style="font-size:11px;color:var(--color-accent-700);letter-spacing:0.1em;margin:0 0 8px;">STEP 3</p><p style="font-size:13px;margin:0;line-height:1.7;">指名が増える</p></div>
-        <div style="align-self:center;color:var(--color-accent-700);font-size:18px;">→</div>
+        <div class="growth-arrow">→</div>
         <div class="card" style="flex:1;min-width:140px;align-items:center;text-align:center;padding:22px 14px;"><p style="font-size:11px;color:var(--color-accent-700);letter-spacing:0.1em;margin:0 0 8px;">STEP 4</p><p style="font-size:13px;margin:0;line-height:1.7;">売上が安定する</p></div>
-        <div style="align-self:center;color:var(--color-accent-700);font-size:18px;">→</div>
+        <div class="growth-arrow">→</div>
         <div class="card" style="flex:1;min-width:140px;align-items:center;text-align:center;padding:22px 14px;"><p style="font-size:11px;color:var(--color-accent-700);letter-spacing:0.1em;margin:0 0 8px;">STEP 5</p><p style="font-size:13px;margin:0;line-height:1.7;">休日も仕事のことを考えなくなる</p></div>
       </div>
       <p style="text-align:center;font-size:14px;font-weight:600;color:var(--color-accent-700);margin:36px 0 0;">美容師が、もっと楽しくなる。</p>
