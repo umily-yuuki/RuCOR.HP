@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>RuCOR. Group — RuCOR. / umily / ヒトトイロ</title>
+<meta name="description" content="川崎市多摩区・登戸/向ヶ丘遊園。縮毛矯正専門RuCOR.、髪質改善スタイリストumily、完全個室ヘッドスパのヒトトイロ。3つのブランドの入口ページ。">
+<link rel="canonical" href="https://rucorhairgroup.netlify.app/">
+<link rel="icon" type="image/png" href="/images/rucor-logo.png">
+<meta property="og:site_name" content="RuCOR. Group">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rucorhairgroup.netlify.app/">
+<meta property="og:title" content="RuCOR. Group — RuCOR. / umily / ヒトトイロ">
+<meta property="og:description" content="川崎市多摩区・登戸/向ヶ丘遊園。縮毛矯正専門RuCOR.、髪質改善スタイリストumily、完全個室ヘッドスパのヒトトイロ。3つのブランドの入口ページ。">
+<meta property="og:image" content="https://rucorhairgroup.netlify.app/images/rucor-logo.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RuCOR. Group — RuCOR. / umily / ヒトトイロ">
+<meta name="twitter:description" content="川崎市多摩区・登戸/向ヶ丘遊園。縮毛矯正専門RuCOR.、髪質改善スタイリストumily、完全個室ヘッドスパのヒトトイロ。3つのブランドの入口ページ。">
+<meta name="twitter:image" content="https://rucorhairgroup.netlify.app/images/rucor-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HairSalon",
+      "name": "RuCOR.",
+      "url": "https://rucorhairgroup.netlify.app/",
+      "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
+      "telephone": "044-322-0570",
+      "priceRange": "¥¥",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "登戸1917 pierre登戸2F",
+        "addressLocality": "川崎市多摩区",
+        "addressRegion": "神奈川県",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "HairSalon",
+      "name": "umily by RuCOR.",
+      "url": "https://rucorhairgroup.netlify.app/",
+      "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
+      "telephone": "044-543-8555",
+      "priceRange": "¥¥",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "登戸2662-2 ヨシザワ第8ビル5F-B",
+        "postalCode": "214-0014",
+        "addressLocality": "川崎市多摩区",
+        "addressRegion": "神奈川県",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "BeautySalon",
+      "name": "ヒトトイロ",
+      "url": "https://rucorhairgroup.netlify.app/hitotoiro.html",
+      "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "登戸2662-2 ヨシザワ第8ビル5F-A",
+        "postalCode": "214-0014",
+        "addressLocality": "川崎市多摩区",
+        "addressRegion": "神奈川県",
+        "addressCountry": "JP"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F2EC;
+    --ink:#1D1B17;
+    --ink-soft:#6B655A;
+    --line:#D9D2C2;
+
+    --rucor:#48584F;      /* 深い鉄鼠 × 緑 — 技術・精密 */
+    --rucor-soft:#DDE3DE;
+    --umily:#B07C48;      /* 温かい琥珀 — 個人の温度 */
+    --umily-soft:#EEE1CD;
+    --hito:#6C577C;       /* 曇った紫 — 静けさ・色が戻る予感 */
+    --hito-soft:#E4DCE9;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{scroll-behavior:smooth; background:#F5F2EC; color-scheme:light;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Shippori Mincho', serif;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{ color:var(--umily); }
+  a:hover{ color:var(--ink); }
+
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px; background:var(--paper);}
+
+  /* ===== INTRO SEQUENCE ===== */
+  .intro-screen{
+    height:100vh;
+    min-height:560px;
+    background:#FAF9F5;
+    display:flex; align-items:center;
+    position:relative;
+  }
+  .intro-inner{
+    max-width:1040px; margin:0 auto; padding:0 28px; width:100%;
+  }
+
+  /* --- Hero scroll-scrubbed video stage --- */
+  .hero-scrub{
+    height:400vh;
+    position:relative;
+    background:#FFFFFF;
+  }
+  .hero-scrub-stick{
+    position:sticky; top:0;
+    height:100vh; min-height:560px;
+    overflow:hidden;
+    background:#FFFFFF;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-scrub-video{
+    position:absolute; inset:0;
+    opacity:0;
+  }
+  .hero-scrub-video video{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .hero-scrub-scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(13,12,10,0.28) 0%, rgba(13,12,10,0.05) 40%, rgba(13,12,10,0.5) 100%);
+    opacity:0;
+  }
+  .hero-scrub-logo{
+    position:relative; z-index:2;
+    width:min(46vw, 300px);
+    display:block;
+  }
+  .hero-scrub-scrolldown{
+    position:absolute; left:0; right:0; bottom:38px; z-index:2;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:0.16em;
+    color:var(--ink-soft); text-transform:uppercase;
+    opacity:0;
+    animation:introUp 0.8s ease forwards, bob 2s ease-in-out 2.4s infinite;
+    animation-delay:1s;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-scrub{ height:100vh; }
+    .hero-scrub-video{ opacity:1; }
+    .hero-scrub-scrim{ opacity:1; }
+    .hero-scrub-logo{ display:none; }
+  }
+  .intro-logo-img{
+    display:block; margin:0 auto;
+    width:min(70vw, 420px);
+    opacity:0; transform:translateY(10px);
+    animation:introUp 1s cubic-bezier(0.22,1,0.36,1) forwards;
+    animation-delay:0.2s;
+  }
+  .intro-tagline{
+    font-family:'Shippori Mincho', serif;
+    font-weight:500;
+    font-size:clamp(17px, 2.4vw, 22px);
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    margin-top:26px;
+    opacity:0; transform:translateY(10px);
+    animation:introUp 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
+    animation-delay:1s;
+  }
+  .intro-scrolldown{
+    position:absolute; left:0; right:0; bottom:38px;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:0.16em;
+    color:var(--ink-soft); text-transform:uppercase;
+    opacity:0;
+    animation:introUp 0.8s ease forwards, bob 2s ease-in-out 2.4s infinite;
+    animation-delay:2.2s;
+  }
+  @keyframes introUp{ to{ opacity:1; transform:translateY(0); } }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
+
+  .intro-2{ min-height:100vh; padding:80px 0; }
+  .intro-2 .intro-inner{
+    display:flex; align-items:center; justify-content:center;
+    gap:56px; flex-wrap:wrap;
+  }
+  .intro-2-text{ flex:1 1 320px; min-width:0; }
+  .intro-2-photo{
+    flex:0 0 auto; width:min(220px, 55vw); aspect-ratio:3/4;
+    border-radius:2px; overflow:hidden; background:var(--rucor-soft);
+    margin:0 auto;
+  }
+  .intro-2-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .intro-2 .intro-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:0.18em; color:var(--ink-soft);
+    text-transform:uppercase;
+    opacity:0; transform:translateY(10px);
+  }
+  .intro-2 h2.serif{
+    font-size:clamp(26px, 4.6vw, 38px);
+    line-height:1.5;
+    margin-top:20px;
+  }
+  .intro-2 h2.serif .l1{ color:var(--rucor); display:block; opacity:0; transform:translateY(14px); }
+  .intro-2 h2.serif .l2{ color:var(--umily); display:block; opacity:0; transform:translateY(14px); }
+  .intro-2 p.intro-desc{
+    margin-top:24px; max-width:560px; font-size:15px; color:var(--ink-soft);
+    opacity:0; transform:translateY(10px);
+  }
+  .intro-2.in .intro-eyebrow{ animation:introUp 1s ease forwards; }
+  .intro-2.in h2.serif .l1{ animation:introUp 1.1s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay:0.3s; }
+  .intro-2.in h2.serif .l2{ animation:introUp 1.1s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay:0.65s; }
+  .intro-2.in p.intro-desc{ animation:introUp 1.1s ease forwards; animation-delay:1.1s; }
+  .intro-2.in p.intro-desc + p.intro-desc{ animation-delay:1.4s; }
+
+  @media (prefers-reduced-motion: reduce){
+    .intro-logo-img, .intro-tagline, .intro-scrolldown,
+    .intro-2 .intro-eyebrow, .intro-2 h2.serif .l1, .intro-2 h2.serif .l2, .intro-2 p.intro-desc{
+      animation:none; opacity:1; transform:none;
+    }
+  }
+
+  /* signature line: wavy -> straight, gaining the three accent colors */
+  .line-wrap{ margin-top:64px; height:64px; }
+  .line-wrap svg{ width:100%; height:100%; display:block; }
+  .path-gray{ stroke:#C7C0AF; }
+  .path-rucor{ stroke:var(--rucor); }
+  .path-umily{ stroke:var(--umily); }
+  .path-hito{ stroke:var(--hito); }
+  .flowpath{
+    fill:none; stroke-width:1.6;
+    stroke-dasharray:6 4;
+    animation:dash 3.2s linear infinite;
+  }
+  @keyframes dash{ to{ stroke-dashoffset:-40; } }
+
+  /* ===== BRAND PANELS ===== */
+  .panels{ padding:20px 0 40px; }
+  .panel{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:28px;
+    border-bottom:1px solid var(--line);
+    padding:64px 0;
+    align-items:center;
+  }
+  .panel:first-child{ padding-top:24px; }
+  @media (max-width:760px){
+    .panel{ grid-template-columns:1fr; gap:28px; padding:48px 0; }
+  }
+
+  .panel-media{
+    aspect-ratio:4/3;
+    border-radius:2px;
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transform:scale(1.08);
+    transition:opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.6s cubic-bezier(0.16,1,0.3,1);
+    will-change:transform;
+  }
+  .panel.in .panel-media{
+    opacity:1;
+    transform:scale(1);
+  }
+  .panel:nth-child(1) .panel-media{ background:var(--rucor-soft); }
+  .panel:nth-child(2) .panel-media{ background:var(--umily-soft); }
+  .panel:nth-child(3) .panel-media{ background:var(--hito-soft); }
+
+  .panel-parallax{
+    position:absolute; inset:-12% 0;
+    transform:translateY(var(--parallax-offset, 0px));
+    will-change:transform;
+  }
+  .panel-parallax img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+
+  .panel-body{ padding:0 12px; }
+  @media (max-width:760px){ .panel-body{ padding:0; } }
+
+  .panel-category{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:0.14em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .panel-name{
+    font-family:'Shippori Mincho', serif;
+    font-weight:600;
+    font-size:clamp(38px, 6.4vw, 60px);
+    line-height:1.1;
+    margin-bottom:16px;
+    letter-spacing:0.01em;
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13.5px; font-weight:500;
+    padding:12px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    color:var(--paper);
+    transition:opacity 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{ opacity:0.85; transform:translateX(2px); }
+  .panel:nth-child(1) .btn{ background:var(--rucor); }
+  .panel:nth-child(2) .btn{ background:var(--umily); }
+  .panel:nth-child(3) .btn{ background:var(--hito); }
+
+  /* ===== INFO SECTIONS: CONTENTS / REVIEW / ACCESS / SNS / RECRUIT ===== */
+  .info-section{ padding:56px 0; border-top:1px dashed var(--line); }
+  .info-section-band{
+    margin:0 -28px; padding:56px 28px;
+    background:#FAF9F5;
+    border-top:1px dashed var(--line); border-bottom:1px dashed var(--line);
+  }
+  .info-section-band .inner{ max-width:1040px; margin:0 auto; }
+  .info-section .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:0.14em; color:var(--umily);
+    text-transform:uppercase; margin-bottom:24px;
+  }
+  .info-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .info-grid.cols-3{ grid-template-columns:repeat(3, 1fr); }
+  @media (max-width:760px){
+    .info-grid, .info-grid.cols-3{ grid-template-columns:1fr; }
+  }
+  .info-grid.contents-grid{ grid-template-columns:repeat(3, 1fr); }
+  @media (max-width:760px){
+    .info-grid.contents-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  .info-card{
+    border:1px solid var(--line); border-radius:4px; padding:20px;
+  }
+  .info-section-band .info-card{ background:var(--paper); }
+  .info-card h3{
+    font-family:'Shippori Mincho', serif; font-weight:500;
+    font-size:16px; margin-bottom:8px;
+  }
+  .info-card p{ font-size:15px; line-height:1.7; color:#4B453B; margin-bottom:14px; }
+  .info-card .line-item{ font-size:13px; color:var(--ink-soft); margin-bottom:4px; }
+  .info-card a.link{
+    font-family:'JetBrains Mono', monospace; font-size:12px;
+    color:var(--ink); text-decoration:none; display:block; margin-top:6px;
+  }
+  .info-card a.link:hover{ text-decoration:underline; }
+  .rating-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:14px; margin-bottom:8px; color:var(--ink-soft);
+  }
+  .rating-row b{ font-family:'Shippori Mincho', serif; color:var(--ink); font-size:16px; font-weight:500; }
+
+  .sns-row{ display:flex; gap:24px; flex-wrap:wrap; }
+  .sns-row a{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+  }
+  .sns-row a:hover{ border-color:var(--ink); }
+
+  .recruit-banner{
+    display:flex; justify-content:space-between; align-items:center; gap:24px;
+    flex-wrap:wrap;
+    background:var(--umily-soft); border-radius:4px; padding:28px 32px;
+  }
+  .recruit-banner h3{
+    font-family:'Shippori Mincho', serif; font-size:19px; margin-bottom:6px;
+  }
+  .recruit-banner p{ font-size:13.5px; color:var(--ink-soft); }
+  .recruit-banner .btn{ background:var(--umily); flex-shrink:0; }
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:56px 0 80px;
+    border-top:1px solid var(--line);
+  }
+  footer .foot-grid{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;
+  }
+  footer .brand{
+    font-family:'Shippori Mincho', serif; font-size:17px;
+  }
+  footer .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; color:var(--ink-soft); line-height:2; text-align:right;
+  }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .flowpath{ animation:none; }
+    .reveal{ transition:none; opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="pageLoader">
+  <img class="loader-mark" src="images/rucor-logo.png" alt="RuCOR. Group">
+  <div class="loader-line-wrap">
+    <svg viewBox="0 0 220 10" preserveAspectRatio="none">
+      <path class="loader-track" d="M0,5 L220,5"/>
+      <path class="loader-fill c-rucor" id="loaderFillRucor" d="M0,5 L73,5"/>
+      <path class="loader-fill c-umily" id="loaderFillUmily" d="M73,5 L147,5"/>
+      <path class="loader-fill c-hito" id="loaderFillHito" d="M147,5 L220,5"/>
+    </svg>
+  </div>
+  <div class="loader-percent mono" id="loaderPercent">0%</div>
+  <div class="loader-cycle">
+    <span>RuCOR.</span>
+    <span>umily by RuCOR.</span>
+    <span>ヒトトイロ</span>
+  </div>
+</div>
+
+<style>
+/* ===== PAGE LOADER: CSS ===== */
+#pageLoader{
+  position:fixed; inset:0; z-index:9999;
+  background:var(--paper);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  transition:opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+}
+#pageLoader.loader-out{ opacity:0; transform:translateY(-16px); pointer-events:none; }
+.loader-mark{
+  width:min(240px, 54vw);
+  display:block;
+  opacity:0; transform:translateY(8px);
+  animation:introUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards, loaderBreathe 2.6s ease-in-out infinite;
+  animation-delay:0.15s, 1.1s;
+}
+@keyframes loaderBreathe{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.035); } }
+.loader-line-wrap{
+  width:min(220px, 46vw); margin-top:6px;
+  opacity:0; transform:translateY(8px);
+  animation:introUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay:0.4s;
+}
+.loader-line-wrap svg{ width:100%; height:10px; display:block; overflow:visible; }
+.loader-track{ fill:none; stroke:var(--line); stroke-width:1; }
+.loader-fill{
+  fill:none; stroke-width:1.4; stroke-linecap:round;
+  transition:stroke-dashoffset 0.25s linear;
+}
+.loader-fill.c-rucor{ stroke:var(--rucor); }
+.loader-fill.c-umily{ stroke:var(--umily); }
+.loader-fill.c-hito{ stroke:var(--hito); }
+.loader-percent{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.1em; color:var(--ink-soft);
+  margin-top:6px;
+  opacity:0; transform:translateY(8px);
+  animation:introUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay:0.4s;
+  font-variant-numeric:tabular-nums;
+}
+.loader-cycle{
+  font-family:'Shippori Mincho', serif;
+  font-size:13px; letter-spacing:0.14em; color:var(--ink-soft);
+  margin-top:10px; height:18px; position:relative; width:min(260px, 56vw); text-align:center;
+  opacity:0; transform:translateY(8px);
+  animation:introUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay:0.6s;
+}
+.loader-cycle span{
+  position:absolute; inset:0;
+  white-space:nowrap;
+  opacity:0; transform:translateY(4px);
+  transition:opacity 0.22s ease, transform 0.22s ease;
+}
+.loader-cycle span.on{ opacity:1; transform:translateY(0); }
+.loader-cycle span:nth-child(1){ color:var(--rucor); }
+.loader-cycle span:nth-child(2){ color:var(--umily); }
+.loader-cycle span:nth-child(3){ color:var(--hito); }
+@media (prefers-reduced-motion: reduce){
+  #pageLoader{ display:none; }
+}
+</style>
+
+<script>
+/* ===== PAGE LOADER: JS =====
+   Time-based progress (0-100% over ~2.4s) since this page has no
+   discrete asset-load counter to hook the bar to. */
+(function(){
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  const loaderPercent = document.getElementById('loaderPercent');
+  const loaderSegs = ['loaderFillRucor', 'loaderFillUmily', 'loaderFillHito'].map(id => document.getElementById(id));
+  const loaderSegLens = loaderSegs.map(seg => { const len = seg.getTotalLength(); seg.style.strokeDasharray = String(len); seg.style.strokeDashoffset = String(len); return len; });
+
+  const DURATION_MS = 5000;
+  const loaderStart = Date.now();
+  let loaderDone = false;
+
+  function tick(){
+    if (loaderDone) return;
+    const elapsed = Date.now() - loaderStart;
+    const pct = Math.min(100, Math.round((elapsed / DURATION_MS) * 100));
+    if (loaderPercent) loaderPercent.textContent = pct + '%';
+    loaderSegs.forEach((seg, idx) => {
+      const segStart = idx * (100 / loaderSegs.length);
+      const segPct = Math.max(0, Math.min(100, (pct - segStart) / (100 / loaderSegs.length) * 100));
+      seg.style.strokeDashoffset = String(loaderSegLens[idx] - (loaderSegLens[idx] * segPct / 100));
+    });
+    if (elapsed >= DURATION_MS) {
+      setTimeout(hideLoader, 350);
+    } else {
+      requestAnimationFrame(tick);
+    }
+  }
+  function hideLoader(){
+    if (loaderDone) return;
+    loaderDone = true;
+    loader.classList.add('loader-out');
+    setTimeout(() => { loader.remove(); }, 950);
+  }
+  requestAnimationFrame(tick);
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) { loader.remove(); return; }
+
+  const cycleSpans = document.querySelectorAll('.loader-cycle span');
+  if (cycleSpans.length) {
+    let cycleIdx = 0;
+    cycleSpans[0].classList.add('on');
+    setInterval(() => {
+      cycleSpans[cycleIdx].classList.remove('on');
+      const nextIdx = (cycleIdx + 1) % cycleSpans.length;
+      setTimeout(() => { cycleSpans[nextIdx].classList.add('on'); }, 260);
+      cycleIdx = nextIdx;
+    }, 1650);
+  }
+})();
+</script>
+
+<nav style="max-width:1040px; margin:0 auto; padding:22px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid #D9D2C2;">
+  <a href="index.html" style="font-family:'Shippori Mincho', serif; font-weight:600; font-size:20px; color:#48584F; text-decoration:none;">RuCOR.</a>
+  <div style="display:flex; gap:22px; flex-wrap:wrap; font-family:'JetBrains Mono', monospace; font-size:12.5px; letter-spacing:0.04em;">
+    <a href="index.html" style="color:#48584F; text-decoration:none; border-bottom:1px solid #48584F; padding-bottom:2px;">TOP</a>
+    <a href="kamishitsu-kaizen.html" style="color:#6B655A; text-decoration:none;">髪質改善</a>
+    <a href="headspa.html" style="color:#6B655A; text-decoration:none;">Head spa</a>
+    <a href="homecare.html" style="color:#6B655A; text-decoration:none;">Home care</a>
+    <a href="10-no-kodawari.html" style="color:#6B655A; text-decoration:none;">10のこだわり</a>
+    <a href="refa-veena.html" style="color:#6B655A; text-decoration:none;">VEENA</a>
+  </div>
+</nav>
+
+<section class="hero-scrub" id="heroScrub">
+  <div class="hero-scrub-stick">
+    <div class="hero-scrub-video" id="heroScrubVideo">
+      <video muted playsinline preload="auto" src="assets/hero-video.mp4"></video>
+    </div>
+    <div class="hero-scrub-scrim" id="heroScrubScrim"></div>
+    <img class="hero-scrub-logo" id="heroScrubLogo" src="images/rucor-logo.png" alt="RuCOR.">
+    <div class="hero-scrub-scrolldown mono" id="heroScrubScroll">Scroll ↓</div>
+  </div>
+</section>
+
+<section class="intro-screen intro-2 reveal">
+  <div class="intro-inner">
+    <div class="intro-2-text">
+      <div class="intro-eyebrow mono">RuCOR. GROUP</div>
+      <h2 class="serif"><span class="l1">髪から引き出す、</span><span class="l2">可能性。</span></h2>
+      <p class="intro-desc">お客様の10年後も綺麗でいられる未来を支えること。それがRuCOR.グループ全体の存在理由です。</p>
+      <p class="intro-desc" style="margin-top:14px;">RuCOR.・umily by RuCOR.・ヒトトイロ。川崎市多摩区・登戸/向ヶ丘遊園、3店舗それぞれの形で。</p>
+      <div class="line-wrap" style="max-width:420px;">
+        <svg viewBox="0 0 1000 64" preserveAspectRatio="none">
+          <path class="flowpath path-gray" d="M0,32 C60,10 120,54 180,32 C240,10 300,54 360,32 C420,14 470,46 520,32"/>
+          <path class="flowpath path-rucor" d="M520,32 C560,22 590,40 620,32"/>
+          <path class="flowpath path-umily" d="M620,32 C660,24 690,38 720,32"/>
+          <path class="flowpath path-hito" d="M720,32 L1000,32"/>
+        </svg>
+      </div>
+    </div>
+    <div class="intro-2-photo">
+      <img src="images/intro-salon.webp" alt="サロンの様子">
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="panels">
+
+    <div class="panel reveal">
+      <div class="panel-media"><div class="panel-parallax"><img src="images/rucor-salon.webp" alt="RuCOR. 店内"></div></div>
+      <div class="panel-body">
+        <h2 class="panel-name serif">RuCOR.</h2>
+        <a class="btn" href="https://beauty.hotpepper.jp/slnH000452481/" target="_blank" rel="noopener">HPBで予約・詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="panel reveal">
+      <div class="panel-media"><div class="panel-parallax"><img src="images/umily-salon.webp" alt="umily by RuCOR. 店内"></div></div>
+      <div class="panel-body">
+        <h2 class="panel-name serif">umily by RuCOR.</h2>
+        <a class="btn" href="https://beauty.hotpepper.jp/slnH000532565/" target="_blank" rel="noopener">HPBで予約・詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="panel reveal">
+      <div class="panel-media"><div class="panel-parallax"><img src="images/hito-salon.webp" alt="ヒトトイロ 店内"></div></div>
+      <div class="panel-body">
+        <p class="panel-category mono">ヘッドスパ専門店</p>
+        <h2 class="panel-name serif">ヒトトイロ</h2>
+        <a class="btn" href="hitotoiro.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="info-section-band reveal">
+    <div class="inner">
+    <div class="label">Contents</div>
+    <div class="info-grid contents-grid">
+      <div class="info-card">
+        <h3>10のこだわり</h3>
+        <p>小さなこだわりが、綺麗を変える</p>
+        <a class="link" href="10-no-kodawari.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+      <div class="info-card">
+        <h3>髪質改善</h3>
+        <p>この髪、どうしたらいいの？その答えは"あなたの髪だけ"が知っている</p>
+        <a class="link" href="kamishitsu-kaizen.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+      <div class="info-card">
+        <h3>Head spa</h3>
+        <p>【整体】×【エステ】の発想でほぐす、頭皮・首・肩のお悩み</p>
+        <a class="link" href="headspa.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+      <div class="info-card">
+        <h3>Home Care</h3>
+        <p>サロンの仕上がりを、毎日続けるために</p>
+        <a class="link" href="homecare.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+      <div class="info-card">
+        <h3>ReFa Online</h3>
+        <p>サロン限定品・先行販売はこちらから</p>
+        <a class="link" href="refa-online.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+      <div class="info-card">
+        <h3>ReFa VEENA</h3>
+        <p>見えない泡で、見違える髪へ</p>
+        <a class="link" href="refa-veena.html" target="_blank" rel="noopener">詳しく見る →</a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="info-section reveal">
+    <div class="label">Review</div>
+    <div class="info-grid cols-3">
+      <div class="info-card">
+        <h3>RuCOR.</h3>
+        <div class="rating-row"><span>HPB</span><b>★4.91</b></div>
+        <div class="rating-row"><span>Google</span><b>★4.6</b></div>
+        <a class="link" href="https://beauty.hotpepper.jp/slnH000452481/review/" target="_blank" rel="noopener">HotPepperの口コミ →</a>
+        <a class="link" href="https://g.page/r/CZb_eNntWkagEB0/review" target="_blank" rel="noopener">Googleの口コミ →</a>
+      </div>
+      <div class="info-card">
+        <h3>umily by RuCOR.</h3>
+        <div class="rating-row"><span>HPB</span><b>★4.8</b></div>
+        <div class="rating-row"><span>Google</span><b>★4.7</b></div>
+        <a class="link" href="https://beauty.hotpepper.jp/slnH000532565/review/" target="_blank" rel="noopener">HotPepperの口コミ →</a>
+        <a class="link" href="https://g.page/r/CW5JB_BwhQWNEB0/review" target="_blank" rel="noopener">Googleの口コミ →</a>
+      </div>
+      <div class="info-card">
+        <h3>ヒトトイロ</h3>
+        <div class="rating-row"><span>HPB</span><b>★4.92</b></div>
+        <div class="rating-row"><span>Google</span><b>★4.8</b></div>
+        <a class="link" href="https://beauty.hotpepper.jp/kr/slnH000774133/review/" target="_blank" rel="noopener">HotPepperの口コミ →</a>
+        <a class="link" href="https://g.page/r/CcpBl9y1hmz-EAE/review" target="_blank" rel="noopener">Googleの口コミ →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section-band reveal">
+    <div class="inner">
+    <div class="label">Access</div>
+    <div class="info-grid cols-3">
+      <div class="info-card">
+        <h3>RuCOR.</h3>
+        <div class="line-item">川崎市多摩区登戸1917 pierre登戸2F</div>
+        <div class="line-item">TEL 044-322-0570</div>
+        <div class="line-item">向ヶ丘遊園駅 徒歩2分</div>
+        <div class="line-item">定休日：月曜</div>
+      </div>
+      <div class="info-card">
+        <h3>umily by RuCOR.</h3>
+        <div class="line-item">川崎市多摩区登戸2662-2 ヨシザワ第8ビル5F-B</div>
+        <div class="line-item">TEL 044-543-8555</div>
+        <div class="line-item">向ヶ丘遊園駅 徒歩3分</div>
+        <div class="line-item">定休日：火曜</div>
+      </div>
+      <div class="info-card">
+        <h3>ヒトトイロ</h3>
+        <div class="line-item">川崎市多摩区登戸2662-2 ヨシザワ第8ビル5F-A</div>
+        <div class="line-item">向ヶ丘遊園駅 徒歩3分</div>
+        <div class="line-item">定休日：火曜</div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="info-section reveal">
+    <div class="label">Instagram</div>
+    <div class="sns-row">
+      <a href="https://instagram.com/rucor.hair" target="_blank" rel="noopener">Instagram — RuCOR. →</a>
+      <a href="https://instagram.com/umily_by_rucor" target="_blank" rel="noopener">Instagram — umily →</a>
+      <a href="https://www.instagram.com/hitotoiro_headspa" target="_blank" rel="noopener">Instagram — ヒトトイロ →</a>
+    </div>
+  </section>
+
+  <section class="info-section reveal">
+    <div class="recruit-banner">
+      <div>
+        <h3 class="serif">スタイリスト募集中</h3>
+        <p>もっと自由に、もっと自分らしく。サロン見学・面接は随時受付中。</p>
+      </div>
+      <a class="btn" href="recruit.html" target="_blank" rel="noopener">採用情報を見る →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="brand serif">RuCOR. Group</div>
+      <div class="meta mono">
+        川崎市多摩区・登戸/向ヶ丘遊園<br>
+        RuCOR. / umily by RuCOR. / ヒトトイロ
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Hero: white-bg logo hold, then scroll scrubs the video, then releases into the page
+  (function(){
+    const wrap = document.getElementById('heroScrub');
+    const videoWrap = document.getElementById('heroScrubVideo');
+    const video = videoWrap ? videoWrap.querySelector('video') : null;
+    const scrim = document.getElementById('heroScrubScrim');
+    const logo = document.getElementById('heroScrubLogo');
+    const scrollHint = document.getElementById('heroScrubScroll');
+    if (!wrap || !video) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { video.autoplay = true; video.loop = true; video.play().catch(()=>{}); return; }
+
+    // iOS Safari won't seek a video's frames reliably until its decode pipeline
+    // has been "woken" by an actual play() call from a user gesture. Do a silent
+    // play/pause on the first touch so later programmatic currentTime scrubs work.
+    let unlocked = false;
+    function unlockVideo(){
+      if (unlocked) return;
+      unlocked = true;
+      video.play().then(() => video.pause()).catch(() => {});
+    }
+    window.addEventListener('touchstart', unlockVideo, { passive:true, once:true });
+    window.addEventListener('scroll', unlockVideo, { passive:true, once:true });
+
+    let duration = 0;
+    video.addEventListener('loadedmetadata', () => { duration = video.duration || 0; });
+
+    const LOGO_HOLD = 0.14;   // 0 - 14%: white screen, logo only
+    const LOGO_FADE = 0.24;   // 14 - 24%: logo fades, video fades in
+    const VIDEO_END = 0.92;   // 24 - 92%: video scrubs across scroll
+    let targetTime = 0;
+    let seeking = false;
+
+    // Cache viewport height instead of reading window.innerHeight live: on mobile
+    // the address bar shows/hides while scrolling, changing innerHeight and
+    // making scroll progress jitter mid-gesture.
+    let vh = window.innerHeight;
+
+    function computeVisuals(){
+      const rect = wrap.getBoundingClientRect();
+      const total = wrap.offsetHeight - vh;
+      const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+
+      let logoOp = 1, videoOp = 0;
+      if (progress <= LOGO_HOLD) {
+        logoOp = 1; videoOp = 0;
+      } else if (progress <= LOGO_FADE) {
+        const t = (progress - LOGO_HOLD) / (LOGO_FADE - LOGO_HOLD);
+        logoOp = 1 - t; videoOp = t;
+      } else {
+        logoOp = 0; videoOp = 1;
+      }
+      logo.style.opacity = String(logoOp);
+      videoWrap.style.opacity = String(videoOp);
+      scrim.style.opacity = String(videoOp * 0.9);
+      scrollHint.style.opacity = progress < 0.05 ? '0.85' : '0';
+
+      if (duration > 0 && progress > LOGO_HOLD) {
+        const vp = Math.min(1, Math.max(0, (progress - LOGO_HOLD) / (VIDEO_END - LOGO_HOLD)));
+        targetTime = vp * duration;
+      } else {
+        targetTime = 0;
+      }
+    }
+    window.addEventListener('scroll', computeVisuals, { passive:true });
+    window.addEventListener('resize', () => { vh = window.innerHeight; computeVisuals(); });
+
+    // Continuous rAF loop: eases currentTime toward the scroll target every
+    // frame (rather than snapping on scroll events) so perceived playback
+    // is smooth even though decoded-frame seeking is inherently steppy.
+    function tick(){
+      if (duration > 0 && !seeking) {
+        const dt = targetTime - video.currentTime;
+        if (Math.abs(dt) > 0.008) {
+          const step = video.currentTime + dt * 0.35;
+          seeking = true;
+          video.currentTime = step;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    video.addEventListener('seeked', () => { seeking = false; });
+    computeVisuals();
+    // Late-loading images/fonts can shift page height after this first
+    // measurement, leaving the opacity calc stale until an actual scroll
+    // event fires. Re-measure once everything has settled.
+    window.addEventListener('load', computeVisuals);
+    setTimeout(computeVisuals, 400);
+    setTimeout(computeVisuals, 1200);
+    requestAnimationFrame(tick);
+  })();
+
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.12});
+  items.forEach(i=>obs.observe(i));
+
+  // gentle parallax on brand photos — the photo drifts slightly slower than the scroll
+  const parallaxEls = document.querySelectorAll('.panel-parallax');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion && parallaxEls.length) {
+    let ticking = false;
+    function updateParallax(){
+      const vh = window.innerHeight;
+      parallaxEls.forEach(el=>{
+        const rect = el.parentElement.getBoundingClientRect();
+        const centerOffset = (rect.top + rect.height / 2) - vh / 2;
+        const offset = centerOffset * 0.12; // subtle drift factor
+        el.style.setProperty('--parallax-offset', offset + 'px');
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', ()=>{
+      if (!ticking){
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateParallax();
+  }
+</script>
+</body>
+</html>
