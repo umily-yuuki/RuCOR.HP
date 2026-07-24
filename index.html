@@ -156,12 +156,6 @@
     animation:introUp 0.8s ease forwards, bob 2s ease-in-out 2.4s infinite;
     animation-delay:1s;
   }
-  @media (prefers-reduced-motion: reduce){
-    .hero-scrub{ height:100vh; }
-    .hero-scrub-video{ opacity:1; }
-    .hero-scrub-scrim{ opacity:1; }
-    .hero-scrub-logo{ display:none; }
-  }
   .intro-logo-img{
     display:block; margin:0 auto;
     width:min(70vw, 420px);
@@ -491,9 +485,6 @@
 .loader-cycle span:nth-child(1){ color:var(--rucor); }
 .loader-cycle span:nth-child(2){ color:var(--umily); }
 .loader-cycle span:nth-child(3){ color:var(--hito); }
-@media (prefers-reduced-motion: reduce){
-  #pageLoader{ display:none; }
-}
 </style>
 
 <script>
@@ -503,9 +494,15 @@
 (function(){
   const loader = document.getElementById('pageLoader');
   if (!loader) return;
+
   const loaderPercent = document.getElementById('loaderPercent');
   const loaderSegs = ['loaderFillRucor', 'loaderFillUmily', 'loaderFillHito'].map(id => document.getElementById(id));
-  const loaderSegLens = loaderSegs.map(seg => { const len = seg.getTotalLength(); seg.style.strokeDasharray = String(len); seg.style.strokeDashoffset = String(len); return len; });
+  // getTotalLength() can throw on some WebKit builds if the SVG hasn't been
+  // laid out yet; fall back to a plain fade so the loader never gets stuck.
+  let loaderSegLens = null;
+  try {
+    loaderSegLens = loaderSegs.map(seg => { const len = seg.getTotalLength(); seg.style.strokeDasharray = String(len); seg.style.strokeDashoffset = String(len); return len; });
+  } catch (e) {}
 
   const DURATION_MS = 5000;
   const loaderStart = Date.now();
@@ -516,11 +513,13 @@
     const elapsed = Date.now() - loaderStart;
     const pct = Math.min(100, Math.round((elapsed / DURATION_MS) * 100));
     if (loaderPercent) loaderPercent.textContent = pct + '%';
-    loaderSegs.forEach((seg, idx) => {
-      const segStart = idx * (100 / loaderSegs.length);
-      const segPct = Math.max(0, Math.min(100, (pct - segStart) / (100 / loaderSegs.length) * 100));
-      seg.style.strokeDashoffset = String(loaderSegLens[idx] - (loaderSegLens[idx] * segPct / 100));
-    });
+    if (loaderSegLens) {
+      loaderSegs.forEach((seg, idx) => {
+        const segStart = idx * (100 / loaderSegs.length);
+        const segPct = Math.max(0, Math.min(100, (pct - segStart) / (100 / loaderSegs.length) * 100));
+        seg.style.strokeDashoffset = String(loaderSegLens[idx] - (loaderSegLens[idx] * segPct / 100));
+      });
+    }
     if (elapsed >= DURATION_MS) {
       setTimeout(hideLoader, 350);
     } else {
@@ -533,10 +532,10 @@
     loader.classList.add('loader-out');
     setTimeout(() => { loader.remove(); }, 950);
   }
+  // Absolute safety net: whatever else happens, never let the loader sit
+  // on screen forever and block the page behind it.
+  setTimeout(hideLoader, DURATION_MS + 1000);
   requestAnimationFrame(tick);
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) { loader.remove(); return; }
 
   const cycleSpans = document.querySelectorAll('.loader-cycle span');
   if (cycleSpans.length) {
@@ -761,8 +760,6 @@
     const logo = document.getElementById('heroScrubLogo');
     const scrollHint = document.getElementById('heroScrubScroll');
     if (!wrap || !video) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) { video.autoplay = true; video.loop = true; video.play().catch(()=>{}); return; }
 
     // iOS Safari won't seek a video's frames reliably until its decode pipeline
     // has been "woken" by an actual play() call from a user gesture. Do a silent
@@ -822,12 +819,19 @@
     // Continuous rAF loop: eases currentTime toward the scroll target every
     // frame (rather than snapping on scroll events) so perceived playback
     // is smooth even though decoded-frame seeking is inherently steppy.
+    let seekStartedAt = 0;
     function tick(){
+      // Some iOS Safari builds silently drop a currentTime write before the
+      // decode pipeline is unlocked and never fire 'seeked'. Without a
+      // timeout, `seeking` would stay stuck true forever and freeze the
+      // video permanently on whatever frame it was on.
+      if (seeking && Date.now() - seekStartedAt > 300) seeking = false;
       if (duration > 0 && !seeking) {
         const dt = targetTime - video.currentTime;
         if (Math.abs(dt) > 0.008) {
           const step = video.currentTime + dt * 0.35;
           seeking = true;
+          seekStartedAt = Date.now();
           video.currentTime = step;
         }
       }
