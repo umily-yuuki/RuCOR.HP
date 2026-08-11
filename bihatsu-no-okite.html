@@ -457,6 +457,10 @@
   .product-photo figcaption .t{
     font-family:var(--font-display); color:var(--ink); font-size:0.9rem; letter-spacing:0.04em;
   }
+  @media (max-width:480px){
+    .product-photo figcaption{ padding:11px 12px; gap:0.3em; font-size:0.53rem; }
+    .product-photo figcaption .t{ font-size:0.65rem; }
+  }
   /* つるりんちょ。stays in normal flow permanently — it alone defines
      this box's height, in every state. いるかのせなか。is absolutely
      positioned to exactly overlay it (same crop, same aspect ratio), so
@@ -713,7 +717,7 @@
     </div>
 
     <div class="mirror-note reveal">
-      <p>想像してみてください。<span>指通りのよい髪</span>で鏡の前に立つ、明日のあなたを。昨日より少し、まとまりやすくなった髪に、きっと気づくはずです。</p>
+      <p>想像してみてください。<br><span>指通りのよい髪</span>で鏡の前に立つ<br>明日のあなたを。<br>昨日より少しまとまりやすくなった髪に、<br>きっと気づくはずです。</p>
     </div>
   </div>
 </section>
