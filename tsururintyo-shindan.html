@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y22SK6VK2W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-Y22SK6VK2W");
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
@@ -281,6 +289,7 @@ const REVIEW_STATS = {
 };
 
 let state = { answers: [], stepIndex: 0, override: null, copied: false };
+let lastFiredResultKey = null; // avoids re-firing the analytics event on every re-render (e.g. copy-link) while the same result stays on screen
 
 function computeResult(answers, override) {
   let shampoo, treatment, booster;
@@ -328,6 +337,7 @@ function goBack() {
 }
 function restart() {
   state = { answers: [], stepIndex: 0, override: null, copied: false };
+  lastFiredResultKey = null;
   render();
 }
 function jumpToCombo(comboKey) {
@@ -353,6 +363,18 @@ function renderAltBox(pair, label) {
 
 function renderResult() {
   const result = computeResult(state.answers, state.override);
+  const resultKey = `${result.shampoo}_${result.treatment}`;
+  if (resultKey !== lastFiredResultKey) {
+    lastFiredResultKey = resultKey;
+    if (typeof gtag === 'function') {
+      gtag('event', 'diagnosis_result_shown', {
+        shampoo: result.shampoo,
+        treatment: result.treatment,
+        combo: resultKey,
+        booster: result.booster,
+      });
+    }
+  }
   const shareText = `わたしにぴったりなのは「${result.shampoo} × ${result.treatment}」でした！ #つるりんちょ診断`;
   const shareUrlX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
   const shareUrlLine = `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(shareText)}`;
