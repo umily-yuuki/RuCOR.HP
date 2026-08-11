@@ -309,6 +309,8 @@
   .section{ padding:clamp(64px,10vw,120px) var(--edge); }
   .section-head{ max-width:640px; margin-bottom:clamp(40px,6vw,72px); }
   .section-title{ margin-top:0.5em; font-size:clamp(1.5rem,3.2vw,2.1rem); letter-spacing:0.04em; }
+  .title-break{ display:none; }
+  @media (max-width:640px){ .title-break{ display:inline; } }
   .section-desc{ margin-top:1.1em; color:var(--ink-soft); max-width:36em; }
 
   /* ===================================================================
@@ -368,8 +370,13 @@
     content:"”"; font-family:var(--font-display); font-size:3.4rem; line-height:1;
     color:var(--gold); opacity:0.5; flex:none;
   }
-  .mirror-note p{ font-family:var(--font-display); font-size:1.12rem; line-height:1.95; letter-spacing:0.03em; }
+  .mirror-note p{ font-family:var(--font-display); font-size:1.12rem; line-height:1.95; letter-spacing:0.03em; text-wrap:pretty; }
   .mirror-note span{ color:var(--gold-strong); }
+  @media (max-width:560px){
+    .mirror-note{ flex-direction:column; gap:4px; padding:24px 22px; }
+    .mirror-note::before{ font-size:2.4rem; }
+    .mirror-note p{ font-size:1.02rem; line-height:1.9; }
+  }
 
   /* ===================================================================
      SCIENCE DIAGRAM
@@ -392,7 +399,7 @@
   .diagram-node .v{ font-family:var(--font-display); font-size:1rem; letter-spacing:0.03em; }
   .diagram-node .d{ margin-top:0.7em; font-size:0.78rem; line-height:1.7; color:var(--ink-soft); }
   @media (max-width:760px){
-    .diagram{ flex-direction:column; }
+    .diagram{ flex-direction:column; align-items:stretch; }
     .diagram-node--result{ margin-top:0; }
   }
   .science-result{
@@ -784,7 +791,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">HOME CARE ITEMS</p>
-      <h2 class="section-title">今日からスタート、美髪の掟</h2>
+      <h2 class="section-title">今日からスタート、<br class="title-break">美髪の掟</h2>
       <p class="section-desc">洗う・整える・乾かす。それぞれの工程に、専用のアイテムを。サロンだけの特別価格でご用意しています。</p>
     </div>
 
@@ -1062,7 +1069,7 @@
       entries.forEach(function(entry){
         photosEl.classList.toggle('iruka-focus', entry.isIntersecting);
       });
-    }, { root: shelfEl, threshold: 0.65 });
+    }, { root: shelfEl, threshold: 0.2 });
     focusIO.observe(lastCard);
   }
 })();
