@@ -20,40 +20,45 @@
 <meta name="twitter:description" content="髪質・ダメージ・理想の仕上がりから、あなたにぴったりの「つるりんちょ。」シャンプー×トリートメントの組み合わせを診断します。">
 <meta name="twitter:image" content="https://rucorhairgroup.netlify.app/images/rucor-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --color-bg:#f3f2f2;
-    --color-text:#201f1d;
-    --color-divider:rgba(32,31,29,0.16);
-    --color-neutral-700:#605d5d;
-    --color-neutral-900:#2d2b2b;
-    --color-accent:#b68235;
-    --color-accent-700:#7d5411;
-    --color-accent-900:#3a270d;
-    --font-heading:"Shippori Mincho","Noto Serif JP",serif;
-    --font-body:"Noto Serif JP",serif;
-    --radius-md:4px;
+    --color-bg:#EFE6D3;
+    --color-bg-alt:#E5D9C0;
+    --color-panel:#F9F4E8;
+    --color-text:#33302B;
+    --color-divider:rgba(51,48,43,0.14);
+    --color-neutral-700:#8A8171;
+    --color-neutral-900:#33302B;
+    --color-accent:#A68F63;
+    --color-accent-700:#7A6440;
+    --color-accent-900:#4A3B22;
+    --font-heading:"Hiragino Mincho ProN","YuMincho","Noto Serif JP",serif;
+    --font-body:"Hiragino Kaku Gothic ProN","YuGothic","Noto Sans JP",sans-serif;
+    --radius-md:2px;
     --space-1:5px; --space-2:9px; --space-3:14px; --space-4:18px; --space-5:23px; --space-6:28px; --space-8:37px;
   }
   *{box-sizing:border-box;}
   body{
     margin:0; background:var(--color-bg); color:var(--color-text);
-    font-family:var(--font-body); line-height:1.7; -webkit-font-smoothing:antialiased;
+    font-family:var(--font-body); line-height:1.8; -webkit-font-smoothing:antialiased;
   }
-  h1,h2{ font-family:var(--font-heading); font-weight:700; margin:0; }
+  h1,h2{ font-family:var(--font-heading); font-weight:600; margin:0; text-wrap:balance; }
   a{ color:var(--color-accent-700); text-decoration:underline; text-underline-offset:2px; }
   a:hover{ color:var(--color-accent-900); }
   button{ font:inherit; }
-  ::selection{ background:rgba(182,130,53,0.3); }
-  @keyframes fadeIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:translateY(0); } }
+  ::selection{ background:var(--color-accent); color:var(--color-panel); }
+  @keyframes fadeIn{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){
+    .stack{ animation:none !important; }
+  }
 
   .nav{
     display:flex; align-items:center; justify-content:space-between; gap:24px;
     padding:20px clamp(16px,5vw,64px); border-bottom:1px solid var(--color-divider);
   }
-  .nav-brand{ font-family:var(--font-heading); font-size:19px; font-weight:600; letter-spacing:0.02em; }
-  .nav a{ font-size:13px; text-decoration:none; color:var(--color-text); }
+  .nav-brand{ font-family:var(--font-heading); font-size:19px; font-weight:600; letter-spacing:0.06em; color:var(--color-text); }
+  .nav a{ font-size:13px; text-decoration:none; color:var(--color-neutral-700); }
   .nav a:hover{ color:var(--color-accent-700); }
 
   .wrap{
@@ -63,66 +68,78 @@
   .col{ width:100%; max-width:640px; }
 
   .hero{ text-align:center; margin-bottom:var(--space-8); }
-  .hero img{ width:100%; height:auto; border-radius:var(--radius-md); margin-bottom:var(--space-4); display:block; }
-  .kicker{ font-size:12px; letter-spacing:0.25em; color:var(--color-accent-700); text-transform:uppercase; margin-bottom:var(--space-3); }
+  .hero img{ width:100%; height:auto; border-radius:var(--radius-md); margin-bottom:var(--space-5); display:block; border:1px solid var(--color-divider); }
+  .kicker{
+    font-size:12px; letter-spacing:0.3em; color:var(--color-accent-700); text-transform:uppercase;
+    margin-bottom:var(--space-3); display:inline-flex; align-items:center; justify-content:center; gap:0.8em;
+    font-weight:600;
+  }
+  .kicker::before{ content:""; width:24px; height:1px; background:var(--color-accent); display:inline-block; }
   .rule-sm{ width:48px; margin:0 auto; border-top:1px solid var(--color-divider); }
 
   .step-row{ display:flex; align-items:center; justify-content:space-between; }
-  .step-count{ font-variant-numeric:tabular-nums; font-size:12px; letter-spacing:0.1em; color:var(--color-neutral-700); }
+  .step-count{ font-variant-numeric:tabular-nums; font-size:12px; letter-spacing:0.14em; color:var(--color-neutral-700); }
   .progress-track{ width:100%; height:2px; background:var(--color-divider); position:relative; margin:var(--space-4) 0; }
-  .progress-bar{ position:absolute; left:0; top:0; height:100%; background:var(--color-accent); transition:width 0.3s ease; }
+  .progress-bar{ position:absolute; left:0; top:0; height:100%; background:var(--color-accent); transition:width 0.4s cubic-bezier(.22,.61,.36,1); }
 
   .q-title{ text-align:center; margin-bottom:var(--space-2); }
-  .q-title h2{ font-size:clamp(24px,5vw,32px); line-height:1.4; }
+  .q-title h2{ font-size:clamp(24px,5vw,32px); line-height:1.4; letter-spacing:0.02em; }
   .q-hint{ text-align:center; font-size:13px; color:var(--color-neutral-700); font-style:italic; margin:0 0 var(--space-6); }
 
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:6px; cursor:pointer;
     text-decoration:none; font-family:var(--font-heading); font-weight:600; font-size:14px;
-    color:var(--color-text); background:transparent; border:1px solid var(--color-divider);
-    padding:12px 20px; border-radius:var(--radius-md); transition:background 0.15s ease;
+    color:var(--color-text); background:var(--color-panel); border:1px solid var(--color-divider);
+    padding:12px 20px; border-radius:var(--radius-md); transition:background 0.18s ease, border-color 0.18s ease;
   }
   .btn-block{ width:100%; }
   .btn-option{ text-align:left; justify-content:flex-start; padding:var(--space-4) var(--space-6); font-size:16px; margin-bottom:var(--space-3); }
-  .btn-option:hover{ background:rgba(32,31,29,0.06); }
-  .btn-primary{ color:var(--color-accent-700); border-color:var(--color-accent); }
-  .btn-primary:hover{ background:rgba(182,130,53,0.12); }
-  .btn-ghost{ border-color:transparent; color:var(--color-accent-700); padding-left:0; }
-  .btn-ghost:hover{ background:rgba(182,130,53,0.1); }
-  .btn-icon{ width:38px; height:38px; padding:0; border-color:var(--color-divider); color:var(--color-accent-700); }
-  .btn-icon:hover{ background:rgba(182,130,53,0.1); }
+  .btn-option:hover{ background:var(--color-bg-alt); border-color:var(--color-accent); }
+  .btn-primary{ color:var(--color-accent-700); border-color:var(--color-accent); background:transparent; }
+  .btn-primary:hover{ background:rgba(166,143,99,0.14); }
+  .btn-ghost{ border-color:transparent; background:transparent; color:var(--color-accent-700); padding-left:0; }
+  .btn-ghost:hover{ background:rgba(166,143,99,0.12); }
+  .btn-icon{ width:38px; height:38px; padding:0; background:transparent; border-color:var(--color-divider); color:var(--color-accent-700); }
+  .btn-icon:hover{ background:rgba(166,143,99,0.12); }
+  .btn-cta{
+    background:var(--color-accent); border-color:var(--color-accent); color:#fff;
+    flex-direction:column; gap:5px; padding:18px 20px; box-shadow:0 6px 18px rgba(122,100,64,0.28);
+  }
+  .btn-cta:hover{ background:var(--color-accent-700); border-color:var(--color-accent-700); }
+  .btn-cta-sub{ font-family:var(--font-body); font-weight:500; font-size:12px; letter-spacing:0.1em; color:rgba(255,255,255,0.88); }
+  .btn-cta-main{ font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:0.04em; }
 
-  .tag{ display:inline-flex; font-size:11px; letter-spacing:0.02em; padding:4px 12px; border-radius:3px; background:#fff3e4; color:#5a3b0a; }
+  .tag{ display:inline-flex; font-size:11px; letter-spacing:0.04em; padding:4px 12px; border-radius:3px; background:var(--color-bg-alt); color:var(--color-accent-900); }
 
-  .card{ border:1px solid var(--color-divider); border-radius:var(--radius-md); }
-  .card-elev{ box-shadow:0 1px 2px rgba(45,43,43,0.14); }
+  .card{ background:var(--color-panel); border:1px solid var(--color-divider); border-radius:var(--radius-md); }
+  .card-elev{ box-shadow:0 2px 10px rgba(51,48,43,0.08); }
 
   .result-title-row{ display:flex; align-items:flex-end; justify-content:center; gap:var(--space-3); }
-  .result-title-row h1{ font-size:clamp(30px,6vw,44px); line-height:1.15; }
+  .result-title-row h1{ font-size:clamp(30px,6vw,44px); line-height:1.15; letter-spacing:0.02em; }
   .result-kana{ font-size:12px; color:var(--color-neutral-700); margin-top:2px; display:block; text-align:center; }
 
   .product-cards{ display:flex; gap:var(--space-4); width:100%; }
   .product-card{ flex:1; padding:var(--space-5); text-align:center; }
   .product-plate{
     width:100%; aspect-ratio:1/1; margin-bottom:var(--space-3); display:flex; align-items:center;
-    justify-content:center; overflow:hidden; background:var(--color-bg); border-radius:var(--radius-md);
+    justify-content:center; overflow:hidden; background:var(--color-bg-alt); border-radius:var(--radius-md);
   }
   .product-plate img{ width:100%; height:100%; object-fit:contain; }
-  .product-label{ font-size:11px; letter-spacing:0.15em; color:var(--color-neutral-700); text-transform:uppercase; margin-bottom:var(--space-2); }
+  .product-label{ font-size:11px; letter-spacing:0.18em; color:var(--color-neutral-700); text-transform:uppercase; margin-bottom:var(--space-2); }
   .product-name{ font-family:var(--font-heading); font-size:24px; color:var(--color-accent-700); }
   .product-kana{ font-size:10px; color:var(--color-neutral-700); margin-top:2px; }
 
   .alt-row{ display:flex; gap:var(--space-3); width:100%; }
   .alt-box{
     flex:1; padding:var(--space-3); border-radius:var(--radius-md); text-align:center;
-    cursor:pointer; font:inherit; transition:background 0.15s ease, border-color 0.15s ease;
+    cursor:pointer; font:inherit; transition:background 0.18s ease, border-color 0.18s ease;
   }
   .alt-label{ font-size:11px; color:var(--color-neutral-700); margin-bottom:var(--space-1); }
   .alt-combo{ font-family:var(--font-heading); font-size:14px; color:var(--color-text); }
   .alt-kana{ font-size:9px; color:var(--color-neutral-700); margin-top:1px; }
 
   .review-card{ width:100%; padding:var(--space-6); }
-  .review-label{ font-size:11px; letter-spacing:0.15em; color:var(--color-accent-700); text-transform:uppercase; text-align:center; margin-bottom:var(--space-4); }
+  .review-label{ font-size:11px; letter-spacing:0.18em; color:var(--color-accent-700); text-transform:uppercase; text-align:center; margin-bottom:var(--space-4); }
   .review-stats{ display:flex; margin-bottom:var(--space-5); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); }
   .review-stat{ flex:1; padding:var(--space-4) var(--space-2); text-align:center; border-right:1px solid var(--color-divider); }
   .review-stat:last-child{ border-right:none; }
@@ -131,21 +148,21 @@
   .review-stat-label{ font-size:11px; color:var(--color-neutral-700); margin-top:var(--space-1); }
   .review-voice{ font-size:14px; line-height:1.9; color:var(--color-text); text-align:justify; margin:0; padding-left:var(--space-3); border-left:2px solid var(--color-accent); }
 
-  .booster-card{ width:100%; padding:var(--space-5); border-color:var(--color-neutral-900); display:flex; gap:var(--space-4); align-items:center; }
-  .booster-plate{ flex-shrink:0; width:128px; height:128px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:var(--radius-md); background:var(--color-bg); }
+  .booster-card{ width:100%; padding:var(--space-5); border-color:var(--color-accent); display:flex; gap:var(--space-4); align-items:center; }
+  .booster-plate{ flex-shrink:0; width:128px; height:128px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:var(--radius-md); background:var(--color-bg-alt); }
   .booster-plate img{ width:100%; height:100%; object-fit:contain; }
-  .booster-kicker{ font-size:11px; letter-spacing:0.15em; color:var(--color-neutral-700); text-transform:uppercase; margin-bottom:var(--space-2); }
+  .booster-kicker{ font-size:11px; letter-spacing:0.18em; color:var(--color-neutral-700); text-transform:uppercase; margin-bottom:var(--space-2); }
   .booster-name{ font-family:var(--font-heading); font-size:22px; color:var(--color-accent-700); }
   .booster-name-kana{ font-size:11px; color:var(--color-neutral-700); }
   .booster-headline{ font-family:var(--font-heading); font-size:20px; color:var(--color-text); margin:var(--space-2) 0; }
-  .booster-tagline{ font-size:12px; letter-spacing:0.1em; color:var(--color-accent-700); margin-bottom:var(--space-2); }
-  .booster-desc{ font-size:14px; line-height:1.8; margin:0; }
+  .booster-tagline{ font-size:12px; letter-spacing:0.12em; color:var(--color-accent-700); margin-bottom:var(--space-2); }
+  .booster-desc{ font-size:14px; line-height:1.8; margin:0; color:var(--color-neutral-700); }
 
   .caution{ font-size:13px; line-height:1.9; color:var(--color-neutral-700); text-align:center; font-style:italic; }
   .share-row{ display:flex; gap:var(--space-3); }
-  .footer-note{ margin-top:var(--space-8); font-size:11px; letter-spacing:0.1em; color:var(--color-neutral-700); }
+  .footer-note{ margin-top:var(--space-8); font-size:11px; letter-spacing:0.16em; color:var(--color-neutral-700); text-transform:uppercase; }
 
-  .stack{ display:flex; flex-direction:column; gap:var(--space-6); animation:fadeIn 0.4s ease; }
+  .stack{ display:flex; flex-direction:column; gap:var(--space-6); animation:fadeIn 0.5s cubic-bezier(.22,.61,.36,1); }
   .gap-3{ gap:var(--space-3); } .gap-4{ gap:var(--space-4); }
 </style>
 </head>
@@ -218,9 +235,9 @@ const PRODUCT_IMAGES = {
   BOOSTER: 'images/tsururintyo/booster.png',
 };
 const TREATMENT_TONE = {
-  REGULAR: { bg: '#f4f1e9', border: '#c9bfa0', hoverBg: '#ece5d3', hoverBorder: '#ab9968' },
-  REPAIR: { bg: '#e9dcc6', border: '#a9865c', hoverBg: '#ddc9a6', hoverBorder: '#8f6c45' },
-  AIR: { bg: '#f0dfd6', border: '#cb9884', hoverBg: '#e6c9b8', hoverBorder: '#b87c63' },
+  REGULAR: { bg: '#F4EFDD', border: '#C9B78D', hoverBg: '#ECE1C4', hoverBorder: '#A68F63' },
+  REPAIR: { bg: '#E8DAC0', border: '#A9865C', hoverBg: '#DDC7A0', hoverBorder: '#8F6C45' },
+  AIR: { bg: '#F0DFD6', border: '#CDA99C', hoverBg: '#E6C9B8', hoverBorder: '#B87C63' },
 };
 const REVIEW_STATS = {
   REPAIR_REPAIR: {
@@ -339,6 +356,19 @@ function renderResult() {
   const shareText = `わたしにぴったりなのは「${result.shampoo} × ${result.treatment}」でした！ #つるりんちょ診断`;
   const shareUrlX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
   const shareUrlLine = `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(shareText)}`;
+  const boosterHtml = result.booster ? `
+    <div class="card booster-card">
+      <div class="booster-plate"><img src="${result.boosterImg}" alt="BOOSTER" loading="lazy"></div>
+      <div>
+        <div class="booster-kicker">+ Special Care</div>
+        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:8px;">
+          <span class="booster-name">BOOSTER</span><span class="booster-name-kana">ブースター</span>
+        </div>
+        <div class="booster-headline">3日に1回のリセットケアを入れるのもおすすめ！</div>
+        <div class="booster-tagline">ビルドアップ解消</div>
+        <p class="booster-desc">不要な蓄積をリセットすることで、補修成分が内部まで届きやすい環境へ整え、重みや絡まりを感じにくい、素直な髪へ導くスペシャルケア</p>
+      </div>
+    </div>` : '';
 
   let html = `<div class="stack" style="align-items:center;">
     <div class="kicker" style="margin-bottom:0;">Your Result</div>
@@ -364,7 +394,7 @@ function renderResult() {
         <div class="product-kana">${result.treatmentKana}</div>
       </div>
     </div>
-
+    ${boosterHtml}
     <div class="alt-row">
       ${result.lighter ? renderAltBox(result.lighter, 'もう少し軽めなら') : ''}
       ${result.heavier ? renderAltBox(result.heavier, 'もう少し重めなら') : ''}
@@ -386,23 +416,11 @@ function renderResult() {
     </div>`;
   }
 
-  if (result.booster) {
-    html += `
-    <div class="card booster-card">
-      <div class="booster-plate"><img src="${result.boosterImg}" alt="BOOSTER" loading="lazy"></div>
-      <div>
-        <div class="booster-kicker">+ Special Care</div>
-        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:8px;">
-          <span class="booster-name">BOOSTER</span><span class="booster-name-kana">ブースター</span>
-        </div>
-        <div class="booster-headline">3日に1回のリセットケアを入れるのもおすすめ！</div>
-        <div class="booster-tagline">ビルドアップ解消</div>
-        <p class="booster-desc">不要な蓄積をリセットすることで、補修成分が内部まで届きやすい環境へ整え、重みや絡まりを感じにくい、素直な髪へ導くスペシャルケア</p>
-      </div>
-    </div>`;
-  }
-
   html += `
+    <a class="btn btn-cta btn-block" href="bihatsu-no-okite.html">
+      <span class="btn-cta-sub">毎日のホームケアガイド</span>
+      <span class="btn-cta-main">美髪の掟 →</span>
+    </a>
     <p class="caution">髪質・ダメージ・理想の仕上がりの3軸で選ぶのがポイントです。<br>重さだけで判断せず、スタッフにご相談ください。</p>
     <div class="stack gap-3" style="width:100%;">
       <button class="btn btn-primary btn-block" id="btn-restart">もう一度診断する</button>
