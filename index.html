@@ -19,7 +19,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>RuCOR. Group — RuCOR. / umily / ヒトトイロ</title>
+<title>登戸・向ヶ丘遊園の縮毛矯正・髪質改善・ヘッドスパ｜RuCOR. Group</title>
 <meta name="description" content="川崎市多摩区・登戸/向ヶ丘遊園。縮毛矯正専門RuCOR.、髪質改善スタイリストumily、完全個室ヘッドスパのヒトトイロ。3つのブランドの入口ページ。">
 <link rel="canonical" href="https://rucorhairgroup.netlify.app/">
 <link rel="icon" type="image/png" href="/images/rucor-logo.png">
@@ -39,8 +39,38 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://rucorhairgroup.netlify.app/#group",
+      "name": "RuCOR. Group",
+      "url": "https://rucorhairgroup.netlify.app/",
+      "logo": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
+      "subOrganization": [
+        {
+          "@id": "https://rucorhairgroup.netlify.app/#rucor"
+        },
+        {
+          "@id": "https://rucorhairgroup.netlify.app/#umily"
+        },
+        {
+          "@id": "https://rucorhairgroup.netlify.app/hitotoiro#hitotoiro"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rucorhairgroup.netlify.app/#website",
+      "name": "RuCOR. Group",
+      "url": "https://rucorhairgroup.netlify.app/",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://rucorhairgroup.netlify.app/#group"
+      }
+    },
+    {
       "@type": "HairSalon",
+      "@id": "https://rucorhairgroup.netlify.app/#rucor",
       "name": "RuCOR.",
+      "alternateName": "ルコル",
       "url": "https://rucorhairgroup.netlify.app/",
       "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
       "telephone": "044-322-0570",
@@ -48,14 +78,24 @@
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "登戸1917 pierre登戸2F",
+        "postalCode": "214-0014",
         "addressLocality": "川崎市多摩区",
         "addressRegion": "神奈川県",
         "addressCountry": "JP"
-      }
+      },
+      "parentOrganization": {
+        "@id": "https://rucorhairgroup.netlify.app/#group"
+      },
+      "sameAs": [
+        "https://beauty.hotpepper.jp/slnH000452481/",
+        "https://www.instagram.com/rucor.hair/"
+      ]
     },
     {
       "@type": "HairSalon",
+      "@id": "https://rucorhairgroup.netlify.app/#umily",
       "name": "umily by RuCOR.",
+      "alternateName": "ユミリーバイルコル",
       "url": "https://rucorhairgroup.netlify.app/",
       "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
       "telephone": "044-543-8555",
@@ -67,13 +107,23 @@
         "addressLocality": "川崎市多摩区",
         "addressRegion": "神奈川県",
         "addressCountry": "JP"
-      }
+      },
+      "parentOrganization": {
+        "@id": "https://rucorhairgroup.netlify.app/#group"
+      },
+      "sameAs": [
+        "https://beauty.hotpepper.jp/slnH000532565/",
+        "https://www.instagram.com/umily_by_rucor/"
+      ]
     },
     {
-      "@type": "BeautySalon",
-      "name": "ヒトトイロ",
-      "url": "https://rucorhairgroup.netlify.app/hitotoiro.html",
+      "@type": "DaySpa",
+      "@id": "https://rucorhairgroup.netlify.app/hitotoiro#hitotoiro",
+      "name": "ヘッドスパ専門店 ヒトトイロ",
+      "alternateName": "ヒトトイロ",
+      "url": "https://rucorhairgroup.netlify.app/hitotoiro",
       "image": "https://rucorhairgroup.netlify.app/images/rucor-logo.png",
+      "telephone": "044-712-5171",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "登戸2662-2 ヨシザワ第8ビル5F-A",
@@ -81,7 +131,27 @@
         "addressLocality": "川崎市多摩区",
         "addressRegion": "神奈川県",
         "addressCountry": "JP"
-      }
+      },
+      "parentOrganization": {
+        "@id": "https://rucorhairgroup.netlify.app/#group"
+      },
+      "sameAs": [
+        "https://beauty.hotpepper.jp/kr/slnH000774133/",
+        "https://www.instagram.com/hitotoiro_headspa/"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rucorhairgroup.netlify.app/#webpage",
+      "url": "https://rucorhairgroup.netlify.app/",
+      "name": "登戸・向ヶ丘遊園の縮毛矯正・髪質改善・ヘッドスパ｜RuCOR. Group",
+      "isPartOf": {
+        "@id": "https://rucorhairgroup.netlify.app/#website"
+      },
+      "about": {
+        "@id": "https://rucorhairgroup.netlify.app/#group"
+      },
+      "inLanguage": "ja"
     }
   ]
 }
