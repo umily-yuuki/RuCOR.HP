@@ -1,5 +1,5 @@
 /* 予約・問い合わせ導線のクリックをGA4に送る（委任リスナー）。
-   キーイベント候補: click_hpb / click_tel / click_line_customer / click_line_giftcard / click_line_recruit */
+   サイト内リンクは click_internal(link_url=遷移先, page_path=遷移元)。キーイベント候補: click_hpb / click_tel / click_line_customer / click_line_giftcard / click_line_recruit */
 (function () {
   var LINE = {
     '7oXigom': 'click_line_recruit',
@@ -17,18 +17,40 @@
     if (/^https?:\/\/www\.bhappy-platform\.jp\//.test(h)) return 'click_shop';
     return null;
   }
+  function norm(p) {
+    p = p.replace(/\.html$/, '').replace(/\/+$/, '');
+    return (p === '' || p === '/index') ? '/' : p;
+  }
+  function internalPath(h) {
+    try {
+      var u = new URL(h, location.href);
+      if (u.origin !== location.origin) return null;
+      return norm(u.pathname);
+    } catch (e) { return null; }
+  }
+  function here() { return norm(location.pathname); }
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a || typeof window.gtag !== 'function') return;
     var h = a.getAttribute('href') || '';
     var name = classify(h);
-    if (!name) return;
+    if (!name) {
+      var to = internalPath(h);
+      if (to === null || to === here() || h.charAt(0) === '#') return;
+      window.gtag('event', 'click_internal', {
+        link_url: to,
+        link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40),
+        page_path: here(),
+        transport_type: 'beacon'
+      });
+      return;
+    }
     var sln = h.match(/sln(H\d+)/);
     window.gtag('event', name, {
       link_url: h.slice(0, 100),
       salon_id: sln ? sln[1] : (h.indexOf('tel:') === 0 ? h.slice(4) : undefined),
       link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40),
-      page_path: location.pathname,
+      page_path: here(),
       transport_type: 'beacon'
     });
   }, true);
