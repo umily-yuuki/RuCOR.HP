@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<title>12月セール お取り置きのご予約｜RuCOR. Group</title>
+<link rel="icon" type="image/png" href="/images/rucor-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f2f2; --surface: #ffffff; --soft: #eae9e9; --text: #201f1d; --sub: #6f6a64;
+    --accent: #b68235; --accent-soft: #f6eddf; --line: #dcd8d3; --warn: #b4533e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Noto Sans JP", sans-serif; font-size: 15px; line-height: 1.8; text-wrap: pretty; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px 120px; }
+  header { text-align: center; padding: 40px 0 24px; }
+  .stores { font-family: "Lora", serif; font-size: 12px; letter-spacing: .2em; color: var(--accent); }
+  h1 { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 26px; line-height: 1.5; margin: 12px 0 8px; }
+  .lead { color: var(--sub); font-size: 14px; margin: 0; }
+  .period { display: inline-block; margin-top: 14px; background: var(--accent); color: #fff; border-radius: 999px; padding: 4px 18px; font-size: 13px; letter-spacing: .05em; }
+  h2 { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 19px; margin: 36px 0 12px; display: flex; align-items: center; gap: 10px; }
+  h2 .n { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-family: "Lora", serif; font-size: 14px; display: grid; place-items: center; }
+  .box { background: var(--surface); border-radius: 12px; padding: 16px; }
+  label.radio { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; background: var(--surface); cursor: pointer; }
+  label.radio:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+  label.radio input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; }
+  label.radio small { display: block; color: var(--sub); font-size: 12px; line-height: 1.5; }
+  input[type=text], input[type=date], select { width: 100%; font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--text); }
+  .field { margin-bottom: 14px; }
+  .field > span { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .hint { font-size: 12px; color: var(--sub); margin: 6px 0 0; line-height: 1.6; }
+  .warn { color: var(--warn); font-size: 13px; margin: 6px 0 0; font-weight: 500; }
+
+  /* 商品 */
+  .prod { background: var(--surface); border-radius: 12px; overflow: hidden; margin-bottom: 14px; border: 2px solid transparent; transition: border-color .15s; }
+  .prod.on { border-color: var(--accent); }
+  .prod .head { display: flex; gap: 14px; padding: 14px; align-items: center; }
+  .prod .img { flex: none; width: 84px; height: 84px; border-radius: 8px; background: var(--soft) center/cover no-repeat; display: grid; place-items: center; font-size: 11px; color: var(--sub); text-align: center; }
+  .prod .ttl { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 16px; line-height: 1.5; }
+  .prod .desc { font-size: 12px; color: var(--sub); line-height: 1.6; margin-top: 2px; }
+  .var { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--soft); }
+  .var .name { flex: 1; font-size: 14px; line-height: 1.5; }
+  .var .price { font-size: 12px; color: var(--sub); line-height: 1.4; }
+  .var .price s { margin-right: 4px; }
+  .var .price b { color: var(--accent); font-size: 14px; }
+  .step { flex: none; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .step button { width: 36px; height: 36px; border: 0; background: #fff; font-size: 18px; color: var(--accent); cursor: pointer; }
+  .step button:disabled { color: #ccc; cursor: default; }
+  .step output { width: 28px; text-align: center; font-weight: 700; }
+  .grp { padding: 10px 14px 6px; border-top: 1px solid var(--soft); font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 14px; color: var(--accent); background: #fbf8f4; }
+  .scent { padding: 0 14px 12px; }
+  .scent select { font-size: 15px; padding: 8px 10px; }
+
+  /* 注意書き */
+  ul.notes { margin: 0; padding-left: 1.2em; font-size: 14px; }
+  ul.notes li { margin-bottom: 6px; }
+  label.agree { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--accent-soft); font-weight: 700; font-size: 14px; cursor: pointer; }
+  label.agree input { accent-color: var(--accent); width: 20px; height: 20px; margin: 2px 0 0; flex: none; }
+
+  /* 合計バー */
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.97); border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); z-index: 10; }
+  .bar .in { max-width: 640px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .bar .sum { font-size: 12px; color: var(--sub); line-height: 1.4; }
+  .bar .sum b { display: block; color: var(--text); font-size: 20px; font-family: "Lora", serif; }
+  .bar .sum s { margin-right: 6px; }
+  .btn { font: inherit; font-weight: 700; font-size: 15px; border: 0; border-radius: 999px; padding: 12px 22px; background: var(--accent); color: #fff; cursor: pointer; }
+  .btn:disabled { background: #cfc6ba; cursor: default; }
+  .btn.ghost { background: #fff; color: var(--accent); border: 1px solid var(--accent); }
+
+  /* できあがった文章 */
+  #result { display: none; }
+  #result.show { display: block; }
+  textarea { width: 100%; font: inherit; font-size: 14px; line-height: 1.7; border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fff; color: var(--text); min-height: 280px; resize: vertical; }
+  .send { text-align: center; background: var(--accent-soft); border-radius: 12px; padding: 16px; margin-top: 12px; }
+  .send p { margin: 0 0 12px; font-weight: 700; }
+  .copied { display: block; font-size: 13px; color: var(--accent); margin-top: 8px; min-height: 1.4em; }
+  .err { color: var(--warn); font-size: 13px; text-align: center; margin: 10px 0 0; min-height: 1.4em; }
+  footer { text-align: center; font-size: 12px; color: var(--sub); margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="stores">RuCOR. ／ umily by RuCOR. ／ ヒトトイロ</div>
+  <h1>12月セール<br>お取り置きのご予約</h1>
+  <p class="lead">ほしい商品を選ぶと、担当スタイリストに送る<br>ご予約の文章ができあがります。</p>
+  <div class="period">12月1日〜30日　ホームケア商品 全品10%オフ</div>
+</header>
+
+<h2><span class="n">1</span>受け取る店舗</h2>
+<div id="stores"></div>
+
+<h2><span class="n">2</span>ほしい商品と個数</h2>
+<p class="hint" style="margin:-4px 0 12px">「＋」で個数を選んでください。金額は10%オフ後の価格です。</p>
+<div id="products"></div>
+
+<h2><span class="n">3</span>お名前とご来店の予定</h2>
+<div class="box">
+  <label class="field"><span>お名前</span><input type="text" id="name" placeholder="例：山田 花子" autocomplete="off"></label>
+  <div class="field"><span>受け取り方</span>
+    <label class="radio"><input type="radio" name="how" value="施術のご予約日に受け取り"><div>施術のご予約日に受け取る<small>すでにご予約している日を選んでください</small></div></label>
+    <label class="radio"><input type="radio" name="how" value="商品だけ受け取りに来店"><div>商品だけ受け取りに行く</div></label>
+  </div>
+  <label class="field" style="margin-bottom:0"><span>ご来店予定日（12月1日〜30日）</span>
+    <input type="date" id="date" min="2026-12-01" max="2026-12-30" value="">
+    <label class="radio" style="margin:8px 0 0"><input type="checkbox" id="undecided"><div>まだ決まっていない</div></label>
+    <p class="warn" id="dateWarn"></p>
+    <p class="hint">営業時間は10時〜19時です。定休日はRuCOR.が月曜日、umily by RuCOR.とヒトトイロが火曜日です。そのほかに不定休もあるので、気になる日はお店にお問い合わせください。</p>
+  </label>
+</div>
+
+<h2><span class="n">4</span>ご確認ください</h2>
+<div class="box">
+  <ul class="notes">
+    <li>ご予約は <b>11月30日まで</b>、お受け取りは <b>12月1日〜30日</b> です。</li>
+    <li>商品は <b>店舗で直接のお受け取り</b> です。郵送はしていません。</li>
+    <li>担当スタイリストが在庫を確認して、お返事します。お返事をもってご予約の完了です。</li>
+    <li>営業時間は10時〜19時、定休日はRuCOR.が月曜日、umily by RuCOR.とヒトトイロが火曜日です（ほか不定休あり。お問い合わせください）。</li>
+  </ul>
+  <label class="agree"><input type="checkbox" id="agree">上記を確認しました</label>
+</div>
+
+<div style="text-align:center;margin-top:28px">
+  <button class="btn" id="make" type="button" style="padding:14px 40px;font-size:16px">内容を確定して文章をつくる</button>
+  <p class="err" id="err"></p>
+</div>
+
+<section id="result">
+  <h2><span class="n">5</span>この文章を担当スタイリストに送ってください</h2>
+  <textarea id="msg" readonly></textarea>
+  <div class="send">
+    <p style="font-weight:400;font-size:14px">ほかの商品についてのご相談も、お気軽にどうぞ。<br>この文章に書き足して送っていただいても大丈夫です。</p>
+    <p>「コピーする」を押して、<br>担当スタイリストとのLINEのトークに貼り付けて送ってください。</p>
+    <button class="btn" id="copy" type="button">コピーする</button>
+    <span class="copied" id="copied"></span>
+  </div>
+</section>
+
+<footer>RuCOR. Group</footer>
+</div>
+
+<div class="bar"><div class="in">
+  <div class="sum">合計（10%オフ後）<b id="total">0円</b><span id="totalSub"></span></div>
+</div></div>
+
+<script>
+const STORES = [
+  { name: "RuCOR.", off: 1, offName: "月曜日" },
+  { name: "umily by RuCOR.", off: 2, offName: "火曜日" },
+  { name: "ヒトトイロ", off: 2, offName: "火曜日" },
+];
+// price = 税込の通常価格。10%オフは1円未満切り捨て
+const PRODUCTS = [
+  { title: "つるりんちょ。", img: "/images/homecare/tsururintyo.webp", desc: "サロンでも使っているシャンプー・トリートメント", items: [
+    ["レギュラー", null],
+    ["シャンプー レギュラー 400ml", 4730], ["シャンプー レギュラー 1000ml", 8800],
+    ["トリートメント レギュラー 380g", 5060], ["トリートメント レギュラー 1000g", 9350],
+    ["リペア", null],
+    ["シャンプー リペア 400ml", 4730], ["シャンプー リペア 1000ml", 8800],
+    ["トリートメント リペア 380g", 5060], ["トリートメント リペア 1000g", 9350],
+    ["エアー", null],
+    ["トリートメント エアー 380g", 5060], ["トリートメント エアー 1000g", 9350],
+    ["ブースター", null],
+    ["ブースター 400ml", 4400], ["ブースター 1000ml", 8800],
+  ]},
+  { title: "いるかのせなか。", img: "/images/homecare/iruka-senaka.webp", desc: "つるりんちょ。の洗い流さないシリーズ", items: [
+    ["オイル", 3960], ["ミルク", 4290], ["ミスト", 3630], ["フォーム", 3960],
+  ]},
+  { title: "リケラエマルジョン", img: "/images/homecare/rikera-emulsion.webp", desc: "お風呂の中でも外でも使えるエマルジョン", items: [
+    ["リケラエマルジョン", 4620], ["リケラエマルジョン 1000ml", 18150],
+  ]},
+  { title: "LOA OIL", img: "/images/homecare/loa-oil.webp", desc: "香りを選べるヘアオイル", scents: ["ブランシュ","ペアブランシュ","ブルークレール","ジャスミン","シトラス","ネロリ","ミスティックウッド"], items: [
+    ["LOA OIL", 5500],
+  ]},
+  { title: "LINC BALM", img: "/images/homecare/linc-balm.webp", desc: "スタイリングに使えるヘアバーム", items: [
+    ["THE HAIR BALM #993", 4290],
+  ]},
+  { title: "ReFa FINE BUBBLE U", img: "/images/homecare/refa-fine-bubble-u.webp", desc: "シャワーヘッド（シルバー）", items: [
+    ["ReFa FINE BUBBLE U シルバー", 30000],
+  ]},
+  { title: "リファビューテック ドライヤー SE W", img: "/images/homecare/refa-dryer-se.jpg", desc: "ドライヤー", items: [
+    ["リファビューテック ドライヤー SE W ホワイト", 36300], ["リファビューテック ドライヤー SE W アイボリー", 36300],
+  ]},
+];
+
+const sale = p => Math.floor(p * 0.9);
+const yen = n => n.toLocaleString("ja-JP") + "円";
+const qty = {}; // key -> 個数
+const scent = {}; // product index -> 香り
+
+// 店舗
+document.getElementById("stores").innerHTML = STORES.map((s, i) =>
+  `<label class="radio"><input type="radio" name="store" value="${i}"><div>${s.name}<small>定休日：${s.offName}</small></div></label>`).join("");
+
+// 商品
+document.getElementById("products").innerHTML = PRODUCTS.map((p, pi) => `
+  <div class="prod" id="prod${pi}">
+    <div class="head">
+      <div class="img" ${p.img ? `style="background-image:url('${p.img}')"` : ""}>${p.img ? "" : "写真<br>準備中"}</div>
+      <div><div class="ttl">${p.title}</div><div class="desc">${p.desc}</div></div>
+    </div>
+    ${p.items.map(([n, pr], ii) => pr === null ? `<div class="grp">${n}</div>` : `
+      <div class="var">
+        <div class="name">${p.items.length > 1 || n !== p.title ? n : "本体"}<div class="price"><s>${yen(pr)}</s> → <b>${yen(sale(pr))}</b></div></div>
+        <div class="step"><button type="button" data-k="${pi}-${ii}" data-d="-1" disabled>−</button><output id="q${pi}-${ii}">0</output><button type="button" data-k="${pi}-${ii}" data-d="1">＋</button></div>
+      </div>`).join("")}
+    ${p.scents ? `<div class="scent" id="scentBox${pi}" style="display:none"><select data-p="${pi}"><option value="">香りを選んでください</option>${p.scents.map(s => `<option>${s}</option>`).join("")}<option value="スタッフに相談したい">スタッフに相談したい</option></select></div>` : ""}
+  </div>`).join("");
+
+document.getElementById("products").addEventListener("click", e => {
+  const b = e.target.closest("button[data-k]"); if (!b) return;
+  const k = b.dataset.k, n = Math.max(0, Math.min(9, (qty[k] || 0) + Number(b.dataset.d)));
+  qty[k] = n; update();
+});
+document.getElementById("products").addEventListener("change", e => {
+  if (e.target.dataset.p !== undefined) scent[e.target.dataset.p] = e.target.value;
+});
+
+function lines() {
+  const out = [];
+  PRODUCTS.forEach((p, pi) => p.items.forEach(([n, pr], ii) => {
+    if (pr === null) return;
+    const q = qty[`${pi}-${ii}`] || 0;
+    if (q) out.push({ pi, label: (n.startsWith(p.title) ? n : `${p.title} ${n}`), q, pr });
+  }));
+  return out;
+}
+
+function update() {
+  let reg = 0, off = 0;
+  PRODUCTS.forEach((p, pi) => {
+    let any = false;
+    p.items.forEach(([, pr], ii) => {
+      if (pr === null) return;
+      const k = `${pi}-${ii}`, q = qty[k] || 0;
+      document.getElementById("q" + k).textContent = q;
+      document.querySelector(`button[data-k="${k}"][data-d="-1"]`).disabled = q === 0;
+      if (q) any = true;
+    });
+    document.getElementById("prod" + pi).classList.toggle("on", any);
+    const sb = document.getElementById("scentBox" + pi); if (sb) sb.style.display = any ? "block" : "none";
+  });
+  lines().forEach(l => { reg += l.pr * l.q; off += sale(l.pr) * l.q; });
+  document.getElementById("total").textContent = yen(off);
+  document.getElementById("totalSub").innerHTML = reg ? `<s>${yen(reg)}</s>` : "";
+}
+
+// 日付と定休日
+const WEEK = "日月火水木金土";
+function checkDate() {
+  const d = document.getElementById("date").value, w = document.getElementById("dateWarn"), si = getStore();
+  w.textContent = "";
+  if (!d) return;
+  const dt = new Date(d + "T00:00:00");
+  if (d < "2026-12-01" || d > "2026-12-30") { w.textContent = "12月1日〜30日の中から選んでください。"; return; }
+  if (si !== null && dt.getDay() === STORES[si].off) w.textContent = `この日は${STORES[si].name}の定休日です。別の日を選んでください。`;
+}
+function getStore() { const r = document.querySelector("input[name=store]:checked"); return r ? Number(r.value) : null; }
+document.getElementById("date").addEventListener("change", checkDate);
+document.getElementById("undecided").addEventListener("change", e => {
+  const d = document.getElementById("date");
+  d.disabled = e.target.checked; if (e.target.checked) d.value = "";
+  checkDate();
+});
+document.getElementById("stores").addEventListener("change", checkDate);
+
+// 文章をつくる
+document.getElementById("make").addEventListener("click", () => {
+  const err = document.getElementById("err"), si = getStore(), ls = lines();
+  const name = document.getElementById("name").value.trim(), d = document.getElementById("date").value;
+  const how = document.querySelector("input[name=how]:checked");
+  const missing = [];
+  if (si === null) missing.push("店舗");
+  if (!ls.length) missing.push("商品");
+  if (!name) missing.push("お名前");
+  if (!how) missing.push("受け取り方");
+  const undecided = document.getElementById("undecided").checked;
+  if (!d && !undecided) missing.push("ご来店予定日");
+  if (missing.length) { err.textContent = `${missing.join("・")}を選んでください。`; return; }
+  if (document.getElementById("dateWarn").textContent) { err.textContent = "ご来店予定日を確認してください。"; return; }
+  if (!document.getElementById("agree").checked) { err.textContent = "「上記を確認しました」にチェックを入れてください。"; return; }
+  err.textContent = "";
+
+  const dt = d ? new Date(d + "T00:00:00") : null;
+  const body = ls.map(l => {
+    const sc = PRODUCTS[l.pi].scents ? `（香り：${scent[l.pi] || "未選択"}）` : "";
+    return `・${l.label}${sc} ×${l.q}`;
+  }).join("\n");
+  const msg =
+`【12月セール お取り置きのご予約】
+お名前：${name}
+店舗：${STORES[si].name}
+ご来店予定：${dt ? `12月${dt.getDate()}日（${WEEK[dt.getDay()]}）` : "未定"}
+受け取り方：${how.value}
+
+${body}
+
+お取り置きをお願いします。`;
+  document.getElementById("msg").value = msg;
+  document.getElementById("copied").textContent = "";
+  const r = document.getElementById("result"); r.classList.add("show");
+  r.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+document.getElementById("copy").addEventListener("click", async () => {
+  const t = document.getElementById("msg"), c = document.getElementById("copied");
+  try { await navigator.clipboard.writeText(t.value); }
+  catch { t.removeAttribute("readonly"); t.select(); document.execCommand("copy"); t.setAttribute("readonly", ""); }
+  c.textContent = "コピーしました。LINEのトークに貼り付けて送ってください。";
+});
+
+update();
+</script>
+</body>
+</html>
