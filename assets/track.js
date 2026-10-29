@@ -53,5 +53,7 @@
       page_path: here(),
       transport_type: 'beacon'
     });
+    // Meta広告の成果用。ピクセルを入れたページ（今は /recruit-stylist のみ）でだけ送られる
+    if (name === 'click_line_recruit' && typeof window.fbq === 'function') window.fbq('track', 'Lead');
   }, true);
 })();
