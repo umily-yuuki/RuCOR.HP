@@ -41,6 +41,7 @@
   .prod .head { display: flex; gap: 14px; padding: 14px; align-items: center; }
   .prod .img { flex: none; width: 84px; height: 84px; border-radius: 8px; background: var(--soft) center/cover no-repeat; display: grid; place-items: center; font-size: 11px; color: var(--sub); text-align: center; }
   .prod .ttl { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 16px; line-height: 1.5; }
+  .plink { display: block; margin: 0 14px 12px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; text-decoration: none; }
   .prod .desc { font-size: 12px; color: var(--sub); line-height: 1.6; margin-top: 2px; }
   .var { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--soft); }
   .var .name { flex: 1; font-size: 14px; line-height: 1.5; }
@@ -156,7 +157,7 @@ const STORES = [
 ];
 // price = 税込の通常価格。10%オフは1円未満切り捨て
 const PRODUCTS = [
-  { title: "つるりんちょ。", img: "/images/homecare/tsururintyo.webp", desc: "サロンでも使っているシャンプー・トリートメント", items: [
+  { title: "つるりんちょ。", img: "/images/homecare/tsururintyo.webp", desc: "サロンでも使っているシャンプー・トリートメント", link: ["どれが合うか迷ったら、つるりんちょ。診断へ", "/tsururintyo-shindan"], items: [
     ["レギュラー", null],
     ["シャンプー レギュラー 400ml", 4730], ["シャンプー レギュラー 1000ml", 8800],
     ["トリートメント レギュラー 380g", 5060], ["トリートメント レギュラー 1000g", 9350],
@@ -204,6 +205,7 @@ document.getElementById("products").innerHTML = PRODUCTS.map((p, pi) => `
       <div class="img" ${p.img ? `style="background-image:url('${p.img}')"` : ""}>${p.img ? "" : "写真<br>準備中"}</div>
       <div><div class="ttl">${p.title}</div><div class="desc">${p.desc}</div></div>
     </div>
+    ${p.link ? `<a class="plink" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} <span aria-hidden="true">→</span></a>` : ""}
     ${p.items.map(([n, pr], ii) => pr === null ? `<div class="grp">${n}</div>` : `
       <div class="var">
         <div class="name">${p.items.length > 1 || n !== p.title ? n : "本体"}<div class="price"><s>${yen(pr)}</s> → <b>${yen(sale(pr))}</b></div></div>
