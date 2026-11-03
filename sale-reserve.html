@@ -43,6 +43,7 @@
   .prod .ttl { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 16px; line-height: 1.5; }
   .plink { display: block; margin: 0 14px 12px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; text-decoration: none; }
   .prod .desc { font-size: 12px; color: var(--sub); line-height: 1.6; margin-top: 2px; }
+  .inote { font-size: 12px; font-weight: 400; color: var(--sub); line-height: 1.7; margin: 4px 0; }
   .var { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--soft); }
   .var .name { flex: 1; font-size: 14px; line-height: 1.5; }
   .var .price { font-size: 12px; color: var(--sub); line-height: 1.4; }
@@ -179,7 +180,7 @@ const PRODUCTS = [
     ["LOA OIL", 5500],
   ]},
   { title: "LINC BALM", img: "/images/homecare/linc-balm.webp", desc: "スタイリングに使えるヘアバーム", items: [
-    ["THE HAIR BALM #993", 4290],
+    ["THE HAIR BALM #997", 4290, "甘酸っぱくフレッシュなフルーティーノートが魅力的。<br>ゼラニウムとスズランの清々しく晴れやかな香りにサンダルウッドの木々が漂う美しい香り。"],
   ]},
   { title: "ReFa FINE BUBBLE U", img: "/images/homecare/refa-fine-bubble-u.webp", desc: "シャワーヘッド（シルバー）", items: [
     ["ReFa FINE BUBBLE U シルバー", 30000],
@@ -206,9 +207,9 @@ document.getElementById("products").innerHTML = PRODUCTS.map((p, pi) => `
       <div><div class="ttl">${p.title}</div><div class="desc">${p.desc}</div></div>
     </div>
     ${p.link ? `<a class="plink" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} <span aria-hidden="true">→</span></a>` : ""}
-    ${p.items.map(([n, pr], ii) => pr === null ? `<div class="grp">${n}</div>` : `
+    ${p.items.map(([n, pr, note], ii) => pr === null ? `<div class="grp">${n}</div>` : `
       <div class="var">
-        <div class="name">${p.items.length > 1 || n !== p.title ? n : "本体"}<div class="price"><s>${yen(pr)}</s> → <b>${yen(sale(pr))}</b></div></div>
+        <div class="name">${p.items.length > 1 || n !== p.title ? n : "本体"}${note ? `<div class="inote">${note}</div>` : ""}<div class="price"><s>${yen(pr)}</s> → <b>${yen(sale(pr))}</b></div></div>
         <div class="step"><button type="button" data-k="${pi}-${ii}" data-d="-1" disabled>−</button><output id="q${pi}-${ii}">0</output><button type="button" data-k="${pi}-${ii}" data-d="1">＋</button></div>
       </div>`).join("")}
     ${p.scents ? `<div class="scent" id="scentBox${pi}" style="display:none"><select data-p="${pi}"><option value="">香りを選んでください</option>${p.scents.map(s => `<option>${s}</option>`).join("")}<option value="スタッフに相談したい">スタッフに相談したい</option></select></div>` : ""}
