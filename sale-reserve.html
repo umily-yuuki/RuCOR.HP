@@ -43,6 +43,7 @@
   .prod .ttl { font-family: "Noto Serif JP", serif; font-weight: 600; font-size: 16px; line-height: 1.5; }
   .plink { display: block; margin: 0 14px 12px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; text-decoration: none; }
   .prod .desc { font-size: 12px; color: var(--sub); line-height: 1.6; margin-top: 2px; }
+  .pnote { margin: 0 14px 12px; }
   .inote { font-size: 12px; font-weight: 400; color: var(--sub); line-height: 1.7; margin: 4px 0; }
   .var { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--soft); }
   .var .name { flex: 1; font-size: 14px; line-height: 1.5; }
@@ -185,10 +186,10 @@ const PRODUCTS = [
   { title: "ReFa FINE BUBBLE U", img: "/images/homecare/refa-fine-bubble-u.webp", desc: "シャワーヘッド（シルバー）", items: [
     ["ReFa FINE BUBBLE U シルバー", 30000],
   ]},
-  { title: "リファビューテック ドライヤー SE W", img: "/images/homecare/refa-dryer-se.jpg", desc: "ドライヤー", items: [
+  { title: "リファビューテック ドライヤー SE W", img: "/images/homecare/refa-dryer-se.jpg", desc: "ドライヤー", note: "小さく軽量で、プロ級の仕上がり。<br>美しさは、場所を選ばない。<br>330g", items: [
     ["リファビューテック ドライヤー SE W ホワイト", 36300], ["リファビューテック ドライヤー SE W アイボリー", 36300],
   ]},
-  { title: "ReFa BRISTLE", img: "/images/homecare/refa-bristle.jpg", desc: "ヘアブラシ", items: [
+  { title: "ReFa BRISTLE", img: "/images/homecare/refa-bristle.jpg", desc: "ヘアブラシ", note: "髪とブラシが美しさを高めあう。<br>生涯かけて高みを目指す、<br>100%天然猪毛ブラシ。", items: [
     ["ReFa BRISTLE", 28800],
   ]},
 ];
@@ -209,6 +210,7 @@ document.getElementById("products").innerHTML = PRODUCTS.map((p, pi) => `
       <div class="img" ${p.img ? `style="background-image:url('${p.img}')"` : ""}>${p.img ? "" : "写真<br>準備中"}</div>
       <div><div class="ttl">${p.title}</div><div class="desc">${p.desc}</div></div>
     </div>
+    ${p.note ? `<div class="inote pnote">${p.note}</div>` : ""}
     ${p.link ? `<a class="plink" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} <span aria-hidden="true">→</span></a>` : ""}
     ${p.items.map(([n, pr, note], ii) => pr === null ? `<div class="grp">${n}</div>` : `
       <div class="var">
