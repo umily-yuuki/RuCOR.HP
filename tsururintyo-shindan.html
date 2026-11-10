@@ -143,6 +143,8 @@
   .product-label{ font-size:11px; letter-spacing:0.18em; color:var(--color-neutral-700); text-transform:uppercase; margin-bottom:var(--space-2); }
   .product-name{ font-family:var(--font-heading); font-size:24px; color:var(--color-accent-700); }
   .product-kana{ font-size:10px; color:var(--color-neutral-700); margin-top:2px; }
+  .product-link{ display:block; text-decoration:none; color:inherit; }
+  .product-more{ font-size:12px; letter-spacing:0.08em; color:var(--color-accent-700); margin-top:var(--space-2); }
 
   .alt-row{ display:flex; gap:var(--space-3); width:100%; }
   .alt-box{
@@ -449,18 +451,20 @@ function renderResult() {
     <p style="font-size:17px; line-height:1.9; text-align:justify; max-width:520px; margin:0;">${escapeHtml(result.desc)}</p>
 
     <div class="product-cards">
-      <div class="card card-elev product-card">
+      <a class="card card-elev product-card product-link" href="/homecare#tsururintyo">
         <div class="product-plate"><img src="${result.shampooImg}" alt="${result.shampoo}" loading="lazy"></div>
         <div class="product-label">Shampoo</div>
         <div class="product-name">${result.shampoo}</div>
         <div class="product-kana">${result.shampooKana}</div>
-      </div>
-      <div class="card card-elev product-card">
+        <div class="product-more">商品の詳細 →</div>
+      </a>
+      <a class="card card-elev product-card product-link" href="/homecare#tsururintyo">
         <div class="product-plate"><img src="${result.treatmentImg}" alt="${result.treatment}" loading="lazy"></div>
         <div class="product-label">Treatment</div>
         <div class="product-name">${result.treatment}</div>
         <div class="product-kana">${result.treatmentKana}</div>
-      </div>
+        <div class="product-more">商品の詳細 →</div>
+      </a>
     </div>
     ${boosterHtml}
     <div class="alt-row">
