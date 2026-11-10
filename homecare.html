@@ -303,6 +303,14 @@ textarea.input { min-height: 90px; resize: vertical; }
   @media (max-width: 860px) { .split-row { grid-template-columns: 1fr !important; } .split-row .plate { order: -1 !important; } }
 </style>
 <script src="/assets/track.js" defer></script>
+<script>
+/* 他のページから #tsururintyo などで来たとき、画像の読み込み後に確実にその欄へ移動する */
+window.addEventListener('load', function () {
+  var id = decodeURIComponent(location.hash.slice(1));
+  var el = id && document.getElementById(id);
+  if (el && Math.abs(el.getBoundingClientRect().top) > 4) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+});
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
