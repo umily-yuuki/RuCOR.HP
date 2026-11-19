@@ -76,6 +76,16 @@ body{word-break:auto-phrase}
 .hero-kicker{font-family:var(--latin);font-style:italic;letter-spacing:.2em;color:var(--wood-deep);font-size:1rem;margin-bottom:1.2em}
 .hero h1{font-size:clamp(1.6rem,7.2vw,3.4rem);line-height:1.5;letter-spacing:.08em;margin-bottom:.8em}
 .hero .sub{font-family:var(--serif);font-size:clamp(1.02rem,3.8vw,1.18rem);color:var(--ink-2);margin-bottom:2.2em;line-height:2}
+/* スマホ: 広告と同じ「写真＋言葉」を最初の画面に出す */
+.hero-media{height:100svh}
+.hero-media::after{content:"";position:absolute;inset:auto 0 0 0;height:62%;background:linear-gradient(rgba(36,33,30,0),rgba(36,33,30,.62));z-index:1}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 96px;color:#fff}
+.hero-copy p{font-family:var(--serif);font-size:clamp(1.45rem,6.6vw,2rem);line-height:1.75;letter-spacing:.06em;font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero-copy p+p{margin-top:.5em}
+.hero-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff;font-size:.78rem;letter-spacing:.16em;text-decoration:none}
+.hero-cue::after{content:"";width:1px;height:28px;background:#fff;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.5}50%{transform:scaleY(1);opacity:1}}
+.hero .sub.pc{display:none}
 
 /* for you */
 .foryou{background:var(--bg)}
@@ -261,6 +271,7 @@ body{word-break:auto-phrase}
   html{scroll-behavior:auto}
   .js .rv{opacity:1;transform:none;transition:none}
   .float-cta,.btn,.qa summary::after{transition:none}
+  .hero-cue::after{animation:none}
 }
 
 /* ≥768 */
@@ -274,6 +285,8 @@ body{word-break:auto-phrase}
   .hero-media{height:auto;order:2}
   .hero-body{padding:120px clamp(28px,4vw,56px) 80px clamp(32px,4.5vw,64px);max-width:620px;justify-self:end}
   .hero h1{font-size:clamp(1.2rem,2.2vw,2.5rem)}
+  .hero-media::after,.hero-copy,.hero-cue{display:none}
+  .hero .sub.pc{display:block}
   .voices{grid-template-columns:1fr 1fr;gap:16px}
   .cmp-row{display:grid;grid-template-columns:11em 1fr;align-items:center;gap:1em}
   .cmp-row dt{margin:0}
@@ -368,11 +381,16 @@ body{word-break:auto-phrase}
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-media">
     <img src="images/recruit-stylist/hero.jpg" width="2000" height="1500" alt="大きな窓から光が入る、木のテーブルと楕円の鏡が並ぶumily by RuCOR.の店内" fetchpriority="high">
+    <div class="hero-copy">
+      <p>技術を磨けば、<br>きっと変わる。</p>
+      <p>そう思って、<br>頑張ってきたはずなのに。</p>
+    </div>
+    <a class="hero-cue" href="#hero-title">続きを読む</a>
   </div>
   <div class="hero-body">
     <p class="hero-kicker">Recruit — Stylist</p>
     <h1 id="hero-title">お客様が今、<br>美容師に<br class="sp">求めていることって、<br>なんだろう。</h1>
-    <p class="sub">技術を磨けば、きっと変わる。<br>そう思って、<br class="sp">頑張ってきたはずなのに。</p>
+    <p class="sub pc">技術を磨けば、きっと変わる。<br>そう思って、<br class="sp">頑張ってきたはずなのに。</p>
     <a class="btn" href="https://lin.ee/7oXigom" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>まずは話を聞いてみる</a>
     <span class="btn-note">LINEで気軽に相談できます</span>
   </div>
